@@ -1,0 +1,615 @@
+{
+  "schema_version": "1.0",
+  "part": "活塞杆_HuoSaiGan",
+  "plan_sha1": "ff409abb95445dea689906f16e196c9ecd3be060",
+  "ops": [
+    {
+      "no": "1",
+      "name": "下料",
+      "text": "棒料 φ80mm × 760mm",
+      "kind": "neutral",
+      "method": "下料",
+      "target": "",
+      "size": { "items": [], "note": "" },
+      "datum": "",
+      "fixture": "",
+      "source": "text",
+      "bodies": [],
+      "not_modeled": ["R5"],
+      "pending": ""
+    },
+    {
+      "no": "2",
+      "name": "锻造",
+      "text": "自由锻成 φ62mm × 1150mm",
+      "kind": "neutral",
+      "method": "锻造",
+      "target": "",
+      "size": {
+        "items": [],
+        "note": "工序 1 写「下料 φ80×760」、工序 2 写「自由锻成 φ62×1150」——760 与 1150 对不上（锻后反而变长）。两序都属非去除类，不入重演；毛坯 STEP 取锻造后 φ62×1150，与工序 10「车端面保证总长 1090」闭合（见 data/README.md §三）"
+      },
+      "datum": "",
+      "fixture": "",
+      "source": "text",
+      "bodies": [],
+      "not_modeled": ["R5"],
+      "pending": ""
+    },
+    {
+      "no": "3",
+      "name": "热处理",
+      "text": "退火",
+      "kind": "neutral",
+      "method": "热处理",
+      "target": "",
+      "size": { "items": [], "note": "" },
+      "datum": "",
+      "fixture": "",
+      "source": "text",
+      "bodies": [],
+      "not_modeled": [],
+      "pending": ""
+    },
+    {
+      "no": "4",
+      "name": "划线",
+      "text": "划两端中心孔线",
+      "kind": "neutral",
+      "method": "划线",
+      "target": "",
+      "size": { "items": [], "note": "" },
+      "datum": "",
+      "fixture": "",
+      "source": "text",
+      "bodies": [],
+      "not_modeled": [],
+      "pending": ""
+    },
+    {
+      "no": "5",
+      "name": "钳工",
+      "text": "钻两端中心孔 B2.5",
+      "kind": "neutral",
+      "method": "钳工",
+      "target": "",
+      "size": { "items": [], "note": "钻两端中心孔 B2.5，只为定位，几何上不建" },
+      "datum": "",
+      "fixture": "",
+      "source": "text",
+      "bodies": [],
+      "not_modeled": ["R3"],
+      "pending": ""
+    },
+    {
+      "no": "6",
+      "name": "粗车",
+      "text": "夹一端，顶尖顶另一端，粗车外圆至 φ55mm",
+      "kind": "removal",
+      "method": "粗车",
+      "target": "外圆",
+      "size": {
+        "items": [
+          { "what": "dia", "value": 55.0, "role": "intermediate", "source": "text", "note": "粗车外圆尺寸；毛坯 φ62" }
+        ],
+        "note": ""
+      },
+      "datum": "一端中心孔",
+      "fixture": "夹一端，顶尖顶另一端",
+      "source": "text",
+      "bodies": [],
+      "not_modeled": [],
+      "pending": ""
+    },
+    {
+      "no": "7",
+      "name": "粗车",
+      "text": "倒头装夹工件，顶另一端中心孔，车外圆至 φ55mm 接工序 6 加工处",
+      "kind": "removal",
+      "method": "粗车",
+      "target": "另一端外圆",
+      "size": {
+        "items": [
+          {
+            "what": "dia",
+            "value": 55.0,
+            "role": "intermediate",
+            "source": "text",
+            "note": "「接工序 6 加工处」= 与工序 6 的同一目标尺寸，只是换了装夹方向，不是新尺寸"
+          }
+        ],
+        "note": ""
+      },
+      "datum": "一端中心孔",
+      "fixture": "倒头装夹工件，顶另一端中心孔",
+      "source": "text",
+      "bodies": [],
+      "not_modeled": [],
+      "pending": ""
+    },
+    {
+      "no": "8",
+      "name": "热处理",
+      "text": "调质处理 28 ~ 32HRC",
+      "kind": "neutral",
+      "method": "热处理",
+      "target": "",
+      "size": { "items": [], "note": "" },
+      "datum": "",
+      "fixture": "",
+      "source": "text",
+      "bodies": [],
+      "not_modeled": [],
+      "pending": ""
+    },
+    {
+      "no": "9",
+      "name": "粗车",
+      "text": "夹一端，中心架支承另一端，切下右端 6mm 做试片，进行金相组织检查，端面车平，钻中心孔 B2.5",
+      "kind": "removal",
+      "method": "粗车",
+      "target": "右端（切试片）、端面",
+      "size": {
+        "items": [
+          {
+            "what": "len",
+            "value": 6.0,
+            "role": "intermediate",
+            "source": "text",
+            "note": "「切下右端 6mm 做试片，进行金相组织检查」——试片本身不留在零件上"
+          }
+        ],
+        "note": "「端面车平」句中未给数 → 只要求车光、不给尺寸；「钻中心孔 B2.5」按 R3 不建"
+      },
+      "datum": "",
+      "fixture": "夹一端，中心架支承另一端",
+      "source": "text",
+      "bodies": [],
+      "not_modeled": ["R3"],
+      "pending": ""
+    },
+    {
+      "no": "10",
+      "name": "粗车",
+      "text": "倒头装夹工件，中心架支撑另一端，车端面，保证总长 1090mm，钻中心孔 B2.5",
+      "kind": "removal",
+      "method": "粗车",
+      "target": "端面、总长",
+      "size": {
+        "items": [
+          { "what": "len", "value": 1090.0, "role": "final", "source": "text", "note": "总长终值" }
+        ],
+        "note": "「钻中心孔 B2.5」按 R3 不建"
+      },
+      "datum": "",
+      "fixture": "倒头装夹工件，中心架支撑另一端",
+      "source": "text",
+      "bodies": [],
+      "not_modeled": ["R3"],
+      "pending": ""
+    },
+    {
+      "no": "11",
+      "name": "精车",
+      "text": "两顶尖装夹工件，车工件右端 M39×2-6g，长 60mm，直径方向留加工余量 1mm，车 φ50(-0.025/0)mm × 770mm 时，要使用跟刀架，保证 1:20 的锥度，并留有加工余量 1mm",
+      "kind": "removal",
+      "method": "精车",
+      "target": "右端 M39 螺纹段、φ50 外圆、1:20 锥面",
+      "size": {
+        "items": [
+          { "what": "dia", "value": 39.0, "role": "final", "source": "text", "note": "M39×2-6g 名义大径（R1 建光杆）" },
+          { "what": "len", "value": 60.0, "role": "final", "source": "text", "note": "右端螺纹段长" },
+          {
+            "what": "dia",
+            "value": 41.0,
+            "role": "intermediate",
+            "source": "blank_minus_allowance",
+            "note": "「直径方向留加工余量 1mm」→ 直径加 2×1 = 2（规范 §三第 3 级），本序车到 φ41，工序 16 车到 φ39"
+          },
+          {
+            "what": "dia",
+            "value": 50.0,
+            "tol": [-0.025, 0.0],
+            "role": "final",
+            "source": "text",
+            "note": "φ50 基准段（图样尺寸）"
+          },
+          { "what": "len", "value": 770.0, "role": "final", "source": "text", "note": "φ50 段长" },
+          {
+            "what": "dia",
+            "value": 51.0,
+            "role": "intermediate",
+            "source": "blank_minus_allowance",
+            "note": "「并留有加工余量 1mm」→ φ50 + 1 = φ51（R11：余量方向未写明）"
+          },
+          {
+            "what": "dia",
+            "value": 47.0,
+            "role": "final",
+            "source": "text",
+            "note": "1:20 锥面小端：60mm 内 φ50 收到 50 − 60/20 = 47（R11 的收敛处理）"
+          },
+          {
+            "what": "angle",
+            "value": 1.43,
+            "role": "final",
+            "source": "text",
+            "note": "1:20 锥面半锥角 = atan(0.5/20) = 1.43°"
+          }
+        ],
+        "note": "「要使用跟刀架」是装夹方式，不影响几何"
+      },
+      "datum": "两端中心孔",
+      "fixture": "两顶尖装夹工件",
+      "source": "blank_minus_allowance",
+      "bodies": [],
+      "not_modeled": ["R1"],
+      "pending": ""
+    },
+    {
+      "no": "12",
+      "name": "精车",
+      "text": "倒头两顶尖装夹工件，车另一端（左端）各部及螺纹 M39×2-6g，长 100mm，直径方向留加工余量 1mm，六方处外径车至 φ48mm，并车六方与 φ50(-0.025/0)mm 连接的锥度",
+      "kind": "removal",
+      "method": "精车",
+      "target": "左端各部、M39 螺纹段、六方处外圆、六方与 φ50 的连接锥面",
+      "size": {
+        "items": [
+          { "what": "dia", "value": 39.0, "role": "final", "source": "text", "note": "M39×2-6g 名义大径（R1 建光杆）" },
+          { "what": "len", "value": 100.0, "role": "final", "source": "text", "note": "左端螺纹段长" },
+          {
+            "what": "dia",
+            "value": 41.0,
+            "role": "intermediate",
+            "source": "blank_minus_allowance",
+            "note": "「直径方向留加工余量 1mm」→ 直径加 2×1 = 2（规范 §三第 3 级）"
+          },
+          {
+            "what": "dia",
+            "value": 48.0,
+            "role": "intermediate",
+            "source": "text",
+            "note": "「六方处外径车至 φ48mm」——工序 22 再铣成 41 六方"
+          },
+          {
+            "what": "dia",
+            "value": 47.34,
+            "role": "final",
+            "source": "geometry",
+            "must_call_tool": true,
+            "note": "「车六方与 φ50(-0.025/0)mm 连接的锥度」：锥面在六方端为对角外接圆φ47.34 = 41×2/√3，在另一端为 φ50；文本未给数值 → 从成品量取"
+          }
+        ],
+        "note": ""
+      },
+      "datum": "两端中心孔",
+      "fixture": "倒头两顶尖装夹工件",
+      "source": "geometry",
+      "bodies": [],
+      "not_modeled": ["R1"],
+      "pending": ""
+    },
+    {
+      "no": "13",
+      "name": "磨",
+      "text": "修研两中心孔",
+      "kind": "neutral",
+      "method": "磨",
+      "target": "",
+      "size": { "items": [], "note": "「修研两中心孔」只动中心孔，中心孔按 R3 不建，模型外形不变 → 记 neutral" },
+      "datum": "",
+      "fixture": "",
+      "source": "text",
+      "bodies": [],
+      "not_modeled": ["R3"],
+      "pending": ""
+    },
+    {
+      "no": "14",
+      "name": "粗磨",
+      "text": "两顶尖装夹工件，粗磨 φ50(-0.025/0)mm × 770mm，留磨量 0.08 ~ 0.10mm",
+      "kind": "removal",
+      "method": "粗磨",
+      "target": "φ50 外圆",
+      "size": {
+        "items": [
+          {
+            "what": "dia",
+            "value": 50.0,
+            "tol": [-0.025, 0.0],
+            "role": "final",
+            "source": "text",
+            "note": "图样尺寸"
+          },
+          { "what": "len", "value": 770.0, "role": "final", "source": "text", "note": "φ50 段长" },
+          {
+            "what": "dia",
+            "value": 50.09,
+            "role": "intermediate",
+            "source": "blank_minus_allowance",
+            "note": "「留磨量 0.08~0.10mm」取中值 0.09 → 本序磨到 φ50.09（R11）"
+          }
+        ],
+        "note": ""
+      },
+      "datum": "两端中心孔",
+      "fixture": "两顶尖装夹工件",
+      "source": "blank_minus_allowance",
+      "bodies": [],
+      "not_modeled": [],
+      "pending": ""
+    },
+    {
+      "no": "15",
+      "name": "粗磨",
+      "text": "两顶尖装夹工件，粗磨 1:20 锥度，留磨量 0.1mm",
+      "kind": "removal",
+      "method": "粗磨",
+      "target": "1:20 锥面",
+      "size": {
+        "items": [
+          { "what": "dia", "value": 47.0, "role": "final", "source": "text", "note": "锥面小端图样尺寸" },
+          {
+            "what": "dia",
+            "value": 47.1,
+            "role": "intermediate",
+            "source": "blank_minus_allowance",
+            "note": "「留磨量 0.1mm」→ φ47 + 0.1（R11）"
+          }
+        ],
+        "note": ""
+      },
+      "datum": "两端中心孔",
+      "fixture": "两顶尖装夹工件",
+      "source": "blank_minus_allowance",
+      "bodies": [],
+      "not_modeled": [],
+      "pending": ""
+    },
+    {
+      "no": "16",
+      "name": "车",
+      "text": "两顶尖装夹工件，车右端螺纹 M39×2-6g，切槽 5mm × φ36mm，倒角 C1",
+      "kind": "removal",
+      "method": "车",
+      "target": "右端螺纹、切槽、倒角",
+      "size": {
+        "items": [
+          { "what": "dia", "value": 39.0, "role": "final", "source": "text", "note": "M39×2-6g 名义大径（R1 建光杆）" },
+          { "what": "width", "value": 5.0, "role": "final", "source": "text", "note": "切槽宽" },
+          { "what": "dia", "value": 36.0, "role": "final", "source": "text", "note": "切槽底径" },
+          { "what": "chamfer", "value": 1.0, "role": "final", "source": "text", "note": "倒角 C1" }
+        ],
+        "note": ""
+      },
+      "datum": "两端中心孔",
+      "fixture": "两顶尖装夹工件",
+      "source": "text",
+      "bodies": [],
+      "not_modeled": ["R1"],
+      "pending": ""
+    },
+    {
+      "no": "17",
+      "name": "车",
+      "text": "倒头两顶尖装夹工件，车左端螺纹 M39×2-6g，切槽 7mm × φ36mm，倒角 C2",
+      "kind": "removal",
+      "method": "车",
+      "target": "左端螺纹、切槽、倒角",
+      "size": {
+        "items": [
+          { "what": "dia", "value": 39.0, "role": "final", "source": "text", "note": "M39×2-6g 名义大径（R1 建光杆）" },
+          { "what": "width", "value": 7.0, "role": "final", "source": "text", "note": "切槽宽" },
+          { "what": "dia", "value": 36.0, "role": "final", "source": "text", "note": "切槽底径" },
+          { "what": "chamfer", "value": 2.0, "role": "final", "source": "text", "note": "倒角 C2" }
+        ],
+        "note": ""
+      },
+      "datum": "两端中心孔",
+      "fixture": "倒头两顶尖装夹工件",
+      "source": "text",
+      "bodies": [],
+      "not_modeled": ["R1"],
+      "pending": ""
+    },
+    {
+      "no": "18",
+      "name": "磨",
+      "text": "修研两中心孔",
+      "kind": "neutral",
+      "method": "磨",
+      "target": "",
+      "size": { "items": [], "note": "「修研两中心孔」同工序 13，几何上不建 → 记 neutral" },
+      "datum": "",
+      "fixture": "",
+      "source": "text",
+      "bodies": [],
+      "not_modeled": ["R3"],
+      "pending": ""
+    },
+    {
+      "no": "19",
+      "name": "半精磨",
+      "text": "两顶尖装夹工件，半精磨 φ50(-0.025/0)mm × 770mm，留精磨量 0.04 ~ 0.05mm",
+      "kind": "removal",
+      "method": "半精磨",
+      "target": "φ50 外圆",
+      "size": {
+        "items": [
+          {
+            "what": "dia",
+            "value": 50.0,
+            "tol": [-0.025, 0.0],
+            "role": "final",
+            "source": "text",
+            "note": "图样尺寸"
+          },
+          { "what": "len", "value": 770.0, "role": "final", "source": "text", "note": "φ50 段长" },
+          {
+            "what": "dia",
+            "value": 50.045,
+            "role": "intermediate",
+            "source": "blank_minus_allowance",
+            "note": "「留精磨量 0.04~0.05mm」取中值 0.045 → 本序磨到 φ50.045（R11）"
+          }
+        ],
+        "note": ""
+      },
+      "datum": "两端中心孔",
+      "fixture": "两顶尖装夹工件",
+      "source": "blank_minus_allowance",
+      "bodies": [],
+      "not_modeled": [],
+      "pending": ""
+    },
+    {
+      "no": "20",
+      "name": "半精磨",
+      "text": "两顶尖装夹工件，半精磨 1:20 锥度，留精磨余量 0.04 ~ 0.05mm",
+      "kind": "removal",
+      "method": "半精磨",
+      "target": "1:20 锥面",
+      "size": {
+        "items": [
+          { "what": "dia", "value": 47.0, "role": "final", "source": "text", "note": "锥面小端图样尺寸" },
+          {
+            "what": "dia",
+            "value": 47.045,
+            "role": "intermediate",
+            "source": "blank_minus_allowance",
+            "note": "「留精磨余量 0.04~0.05mm」取中值 0.045 → φ47 + 0.045（R11）"
+          }
+        ],
+        "note": ""
+      },
+      "datum": "两端中心孔",
+      "fixture": "两顶尖装夹工件",
+      "source": "blank_minus_allowance",
+      "bodies": [],
+      "not_modeled": [],
+      "pending": ""
+    },
+    {
+      "no": "21",
+      "name": "热处理",
+      "text": "渗氮处理 φ50(-0.025/0)mm × 770mm，深度为 0.25 ~ 0.35mm，渗氮时，工件应垂直吊挂，防止工件变形，另外螺纹部分和六方部分均应安装保护套",
+      "kind": "neutral",
+      "method": "热处理",
+      "target": "",
+      "size": {
+        "items": [],
+        "note": "渗氮层（深度 0.25~0.35mm）按 R4 不建，模型几何不变 → 记 neutral；「工件应垂直吊挂」「螺纹部分和六方部分均应安装保护套」是工艺措施，不影响几何"
+      },
+      "datum": "",
+      "fixture": "",
+      "source": "text",
+      "bodies": [],
+      "not_modeled": ["R4"],
+      "pending": ""
+    },
+    {
+      "no": "22",
+      "name": "铣",
+      "text": "铣六方至图样尺寸 41mm × 41mm",
+      "kind": "removal",
+      "method": "铣",
+      "target": "六方",
+      "size": {
+        "items": [
+          {
+            "what": "width",
+            "value": 41.0,
+            "role": "final",
+            "source": "text",
+            "note": "六方对边 41×41（对角外接圆 φ47.34）"
+          }
+        ],
+        "note": ""
+      },
+      "datum": "",
+      "fixture": "",
+      "source": "text",
+      "bodies": [],
+      "not_modeled": [],
+      "pending": ""
+    },
+    {
+      "no": "23",
+      "name": "精磨",
+      "text": "两顶尖装夹工件，精磨 φ50(-0.025/0)mm × 770mm 至图样尺寸",
+      "kind": "removal",
+      "method": "精磨",
+      "target": "φ50 外圆",
+      "size": {
+        "items": [
+          {
+            "what": "dia",
+            "value": 50.0,
+            "tol": [-0.025, 0.0],
+            "role": "final",
+            "source": "text",
+            "note": "磨至图样尺寸"
+          },
+          { "what": "len", "value": 770.0, "role": "final", "source": "text", "note": "φ50 段长" }
+        ],
+        "note": ""
+      },
+      "datum": "两端中心孔",
+      "fixture": "两顶尖装夹工件",
+      "source": "text",
+      "bodies": [],
+      "not_modeled": [],
+      "pending": ""
+    },
+    {
+      "no": "24",
+      "name": "精磨",
+      "text": "两顶尖装夹工件，精磨 1:20 锥度至图样尺寸",
+      "kind": "removal",
+      "method": "精磨",
+      "target": "1:20 锥面",
+      "size": {
+        "items": [
+          { "what": "dia", "value": 47.0, "role": "final", "source": "text", "note": "锥面小端，磨至图样尺寸" }
+        ],
+        "note": ""
+      },
+      "datum": "两端中心孔",
+      "fixture": "两顶尖装夹工件",
+      "source": "text",
+      "bodies": [],
+      "not_modeled": [],
+      "pending": ""
+    },
+    {
+      "no": "25",
+      "name": "检验",
+      "text": "按图样检验各部尺寸",
+      "kind": "neutral",
+      "method": "检验",
+      "target": "",
+      "size": { "items": [], "note": "" },
+      "datum": "",
+      "fixture": "",
+      "source": "text",
+      "bodies": [],
+      "not_modeled": [],
+      "pending": ""
+    },
+    {
+      "no": "26",
+      "name": "入库",
+      "text": "涂油包装入库",
+      "kind": "neutral",
+      "method": "入库",
+      "target": "",
+      "size": { "items": [], "note": "" },
+      "datum": "",
+      "fixture": "",
+      "source": "text",
+      "bodies": [],
+      "not_modeled": [],
+      "pending": ""
+    }
+  ]
+}
