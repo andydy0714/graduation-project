@@ -1,0 +1,181 @@
+{
+  "schema_version": "1.0",
+  "part": "铜套_TongTao",
+  "plan_sha1": "b4b422becab610069e27e504876a969d71c7f0d3",
+  "ops": [
+    {
+      "no": "1",
+      "name": "下料",
+      "text": "（棒料）φ45mm×40mm",
+      "kind": "neutral",
+      "method": "下料",
+      "target": "",
+      "size": { "items": [], "note": "" },
+      "datum": "",
+      "fixture": "",
+      "source": "text",
+      "bodies": [],
+      "not_modeled": ["R5"],
+      "pending": ""
+    },
+    {
+      "no": "2",
+      "name": "车",
+      "text": "夹一端外圆，粗车外圆至 φ42mm，长 20mm，粗车端面见平即可，钻孔 φ30mm，粗车内孔至 φ33mm",
+      "kind": "removal",
+      "method": "车",
+      "target": "外圆、端面、内孔",
+      "size": {
+        "items": [
+          { "what": "dia", "value": 42.0, "role": "intermediate", "source": "text",
+            "note": "粗车外圆尺寸；工序 3 仍为 φ42，成品为 φ39" },
+          { "what": "len", "value": 20.0, "role": "intermediate", "source": "text",
+            "note": "φ42 段长度" },
+          { "what": "dia", "value": 30.0, "role": "intermediate", "source": "text",
+            "note": "钻孔直径" },
+          { "what": "dia", "value": 33.0, "role": "intermediate", "source": "text",
+            "note": "粗车内孔尺寸；成品为 φ35" }
+        ],
+        "note": "「粗车端面见平即可」句中未给数 → 只要求车光、不给尺寸（§三第 3 级）"
+      },
+      "datum": "",
+      "fixture": "夹一端外圆",
+      "source": "text",
+      "bodies": [],
+      "not_modeled": [],
+      "pending": ""
+    },
+    {
+      "no": "3",
+      "name": "车",
+      "text": "倒头夹 φ42mm 外圆，找正内孔，车外圆至 φ42mm，接上序 φ42mm，车端面保证总长 36mm",
+      "kind": "removal",
+      "method": "车",
+      "target": "另一端外圆、另一端面",
+      "size": {
+        "items": [
+          { "what": "dia", "value": 42.0, "role": "intermediate", "source": "text",
+            "note": "「接上序 φ42mm」= 与工序 2 的 φ42 是同一目标尺寸，只是换了装夹方向，不是新尺寸" },
+          { "what": "len", "value": 36.0, "role": "intermediate", "source": "text",
+            "note": "工序 5 再保证总长 34，本序 36 是中间尺寸（R10）" }
+        ],
+        "note": ""
+      },
+      "datum": "内孔（找正）",
+      "fixture": "倒头夹 φ42mm 外圆",
+      "source": "text",
+      "bodies": [],
+      "not_modeled": [],
+      "pending": ""
+    },
+    {
+      "no": "4",
+      "name": "精车",
+      "text": "用专用工装装夹①工件，内孔找正，精车铜套内孔至图样尺寸 φ35(+0.041/+0.025)mm，精车端面，保证总长 35mm，倒角。拉深 0.5mm，长 24mm 润滑槽",
+      "kind": "quasi_removal",
+      "method": "精车",
+      "target": "内孔、端面、内孔润滑槽",
+      "size": {
+        "items": [
+          { "what": "dia", "value": 35.0, "tol": [0.025, 0.041], "role": "final", "source": "text",
+            "note": "内孔图样尺寸" },
+          { "what": "len", "value": 35.0, "role": "intermediate", "source": "text",
+            "note": "工序 5 再保证总长 34（-0.45/-0.65），本序 35 是中间尺寸（R10）" },
+          { "what": "dia", "value": 36.0, "role": "final", "source": "text",
+            "note": "润滑槽槽底孔 = 35 + 2×0.5，由文本即可推出" },
+          { "what": "len", "value": 24.0, "role": "final", "source": "text",
+            "note": "润滑槽长度" },
+          { "what": "chamfer", "value": 1.0, "role": "final", "source": "geometry",
+            "must_call_tool": true,
+            "note": "文本只写「倒角」未给 C 值 → 从成品量取（§三第 4 级）" }
+        ],
+        "note": "本序含准去除类动作「拉深 0.5mm、长 24mm 润滑槽」，按内孔环形槽表达（规范 §二）"
+      },
+      "datum": "内孔",
+      "fixture": "用专用工装装夹①工件，内孔找正",
+      "source": "geometry",
+      "bodies": [],
+      "not_modeled": [],
+      "pending": ""
+    },
+    {
+      "no": "5",
+      "name": "精车",
+      "text": "用专用工装装夹②工件，内孔定位，精车铜套外圆至图样尺寸 φ39(+0.076/+0.060)mm，精车另一端面并倒角，保证总长 34(-0.45/-0.65)mm",
+      "kind": "removal",
+      "method": "精车",
+      "target": "外圆、另一端面",
+      "size": {
+        "items": [
+          { "what": "dia", "value": 39.0, "tol": [0.060, 0.076], "role": "final", "source": "text",
+            "note": "外圆图样尺寸（数据集文本即写作 φ39，见 data/README.md §四）" },
+          { "what": "len", "value": 34.0, "tol": [-0.65, -0.45], "role": "final", "source": "text",
+            "note": "总长，终值" },
+          { "what": "chamfer", "value": 1.0, "role": "final", "source": "geometry",
+            "must_call_tool": true,
+            "note": "文本只写「倒角」未给 C 值 → 从成品量取（§三第 4 级）" }
+        ],
+        "note": ""
+      },
+      "datum": "内孔",
+      "fixture": "用专用工装装夹②工件，内孔定位",
+      "source": "geometry",
+      "bodies": [],
+      "not_modeled": [],
+      "pending": ""
+    },
+    {
+      "no": "6",
+      "name": "钳",
+      "text": "钻 φ5mm 油孔，孔轴线距铜套右端面 17mm。注意孔与润滑槽的相对位置。去毛刺",
+      "kind": "removal",
+      "method": "钳",
+      "target": "φ5 径向油孔",
+      "size": {
+        "items": [
+          { "what": "dia", "value": 5.0, "role": "final", "source": "text",
+            "note": "径向孔" },
+          { "what": "pos", "value": 17.0, "role": "final", "source": "text",
+            "note": "孔轴线距右端面" }
+        ],
+        "note": "「去毛刺」属微去除，几何上不建（R4）；「注意孔与润滑槽的相对位置」是工艺提醒，不产生新尺寸"
+      },
+      "datum": "右端面",
+      "fixture": "",
+      "source": "text",
+      "bodies": [],
+      "not_modeled": ["R4"],
+      "pending": ""
+    },
+    {
+      "no": "7",
+      "name": "检验",
+      "text": "检查各部尺寸",
+      "kind": "neutral",
+      "method": "检验",
+      "target": "",
+      "size": { "items": [], "note": "" },
+      "datum": "",
+      "fixture": "",
+      "source": "text",
+      "bodies": [],
+      "not_modeled": [],
+      "pending": ""
+    },
+    {
+      "no": "8",
+      "name": "入库",
+      "text": "入库",
+      "kind": "neutral",
+      "method": "入库",
+      "target": "",
+      "size": { "items": [], "note": "" },
+      "datum": "",
+      "fixture": "",
+      "source": "text",
+      "bodies": [],
+      "not_modeled": [],
+      "pending": ""
+    }
+  ]
+}

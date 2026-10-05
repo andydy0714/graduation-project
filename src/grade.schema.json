@@ -1,0 +1,57 @@
+{
+  "title": "grade",
+  "schema_version": "1.0",
+  "_note": "判分块：W6 判分器对着它逐条比外部 LLM 的解析结果。只有 2 件参照解析集有本文件（exp/标注规范.md §二）。几何上『不体现』的豁免理由不写在这里，写在 process_plan.json 每条 op 的 not_modeled 里，避免两处真相。",
+  "type": "object",
+  "required": ["schema_version", "part", "ops"],
+  "additionalProperties": false,
+  "properties": {
+    "_note": { "type": "string" },
+    "schema_version": { "type": "string", "enum": ["1.0"] },
+    "part": { "type": "string", "minLength": 1 },
+    "ops": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["no", "graded", "kind", "method", "method_ok_alt",
+                     "target_terms", "targets", "expected_tool_use", "ambiguity"],
+        "additionalProperties": false,
+        "properties": {
+          "no": { "type": "string", "minLength": 1 },
+          "graded": { "type": "boolean" },
+          "kind": { "type": "string", "enum": ["removal", "neutral", "quasi_removal"] },
+          "method": { "type": "string" },
+          "method_ok_alt": { "type": "array", "items": { "type": "string" } },
+          "target_terms": { "type": "array", "items": { "type": "string" } },
+          "expected_tool_use": { "type": "string", "enum": ["none", "optional", "required"] },
+          "ambiguity": { "type": "array", "items": { "type": "string" } },
+          "targets": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["what", "value", "tol_mm", "allowed_sources",
+                           "must_call_tool", "required"],
+              "additionalProperties": false,
+              "properties": {
+                "what": { "type": "string",
+                          "enum": ["dia", "len", "width", "depth", "radius", "chamfer", "angle", "pos"] },
+                "value": { "type": "number" },
+                "tol_mm": { "type": "number" },
+                "allowed_sources": {
+                  "type": "array",
+                  "minItems": 1,
+                  "items": { "type": "string",
+                             "enum": ["text", "blank_minus_allowance", "geometry", "pending"] }
+                },
+                "must_call_tool": { "type": "boolean" },
+                "required": { "type": "boolean" },
+                "note": { "type": "string" }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

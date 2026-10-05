@@ -1,0 +1,80 @@
+{
+  "schema_version": "1.0",
+  "part": "铜套_TongTao",
+  "_note": "判分块。工序 4 的 kind 期望是 quasi_removal（含「拉深 0.5mm、长 24mm 润滑槽」，规范 §二 归入去除类）；工序 4/5 的倒角未给 C 值 → allowed_sources 只有 geometry，猜一个数不算对。",
+  "ops": [
+    { "no": "1", "graded": false, "kind": "neutral", "method": "下料", "method_ok_alt": [],
+      "target_terms": [], "targets": [], "expected_tool_use": "none", "ambiguity": [] },
+    { "no": "2", "graded": true, "kind": "removal", "method": "车", "method_ok_alt": ["粗车"],
+      "target_terms": ["外圆", "端面", "内孔"],
+      "targets": [
+        { "what": "dia", "value": 42.0, "tol_mm": 0.1, "allowed_sources": ["text"],
+          "must_call_tool": false, "required": true, "note": "粗车外圆尺寸，成品为 φ39" },
+        { "what": "len", "value": 20.0, "tol_mm": 0.1, "allowed_sources": ["text"],
+          "must_call_tool": false, "required": true, "note": "φ42 段长度" },
+        { "what": "dia", "value": 30.0, "tol_mm": 0.1, "allowed_sources": ["text"],
+          "must_call_tool": false, "required": true, "note": "钻孔 φ30" },
+        { "what": "dia", "value": 33.0, "tol_mm": 0.1, "allowed_sources": ["text"],
+          "must_call_tool": false, "required": true, "note": "粗车内孔，成品为 φ35" }
+      ],
+      "expected_tool_use": "none",
+      "ambiguity": ["粗车端面见平即可（句中未给数 → 只要求车光、不给尺寸）"] },
+    { "no": "3", "graded": true, "kind": "removal", "method": "车", "method_ok_alt": ["粗车"],
+      "target_terms": ["倒头", "φ42", "总长 36"],
+      "targets": [
+        { "what": "dia", "value": 42.0, "tol_mm": 0.1, "allowed_sources": ["text"],
+          "must_call_tool": false, "required": true,
+          "note": "接上序 φ42：与工序 2 同一目标尺寸，不是新尺寸" },
+        { "what": "len", "value": 36.0, "tol_mm": 0.1, "allowed_sources": ["text"],
+          "must_call_tool": false, "required": true, "note": "中间尺寸，终值 34 在工序 5" }
+      ],
+      "expected_tool_use": "none",
+      "ambiguity": ["倒头夹 φ42mm 外圆（调头，基准翻转）",
+                    "接上序 φ42mm（同一目标尺寸，换装夹方向）"] },
+    { "no": "4", "graded": true, "kind": "quasi_removal", "method": "精车", "method_ok_alt": ["车"],
+      "target_terms": ["内孔", "φ35", "润滑槽", "拉深"],
+      "targets": [
+        { "what": "dia", "value": 35.0, "tol_mm": 0.1, "allowed_sources": ["text"],
+          "must_call_tool": false, "required": true },
+        { "what": "len", "value": 35.0, "tol_mm": 0.1, "allowed_sources": ["text"],
+          "must_call_tool": false, "required": true, "note": "中间尺寸，终值 34 在工序 5" },
+        { "what": "dia", "value": 36.0, "tol_mm": 0.1, "allowed_sources": ["text"],
+          "must_call_tool": false, "required": true, "note": "润滑槽底 = 35 + 2×0.5，由文本即可推出" },
+        { "what": "len", "value": 24.0, "tol_mm": 0.1, "allowed_sources": ["text"],
+          "must_call_tool": false, "required": true, "note": "润滑槽长度" },
+        { "what": "chamfer", "value": 1.0, "tol_mm": 0.1, "allowed_sources": ["geometry"],
+          "must_call_tool": true, "required": true,
+          "note": "文本只写「倒角」未给 C 值 → 必须从成品量取（C1）；猜一个数不算对" }
+      ],
+      "expected_tool_use": "required",
+      "ambiguity": ["拉深 0.5mm、长 24mm 润滑槽（槽底孔径 = 孔径 + 2×深度）",
+                    "倒角（未给 C 值 → 从成品量取）"] },
+    { "no": "5", "graded": true, "kind": "removal", "method": "精车", "method_ok_alt": ["车"],
+      "target_terms": ["外圆", "φ39", "总长 34"],
+      "targets": [
+        { "what": "dia", "value": 39.0, "tol_mm": 0.1, "allowed_sources": ["text"],
+          "must_call_tool": false, "required": true, "note": "外圆图样尺寸（文本即写作 φ39）" },
+        { "what": "len", "value": 34.0, "tol_mm": 0.1, "allowed_sources": ["text"],
+          "must_call_tool": false, "required": true, "note": "总长终值" },
+        { "what": "chamfer", "value": 1.0, "tol_mm": 0.1, "allowed_sources": ["geometry"],
+          "must_call_tool": true, "required": true,
+          "note": "「并倒角」未给 C 值 → 必须从成品量取" }
+      ],
+      "expected_tool_use": "required",
+      "ambiguity": ["倒角（未给 C 值 → 从成品量取）"] },
+    { "no": "6", "graded": true, "kind": "removal", "method": "钳", "method_ok_alt": ["钻"],
+      "target_terms": ["钻", "φ5", "油孔", "17"],
+      "targets": [
+        { "what": "dia", "value": 5.0, "tol_mm": 0.1, "allowed_sources": ["text"],
+          "must_call_tool": false, "required": true, "note": "径向孔" },
+        { "what": "pos", "value": 17.0, "tol_mm": 0.1, "allowed_sources": ["text"],
+          "must_call_tool": false, "required": true, "note": "孔轴线距右端面" }
+      ],
+      "expected_tool_use": "none",
+      "ambiguity": ["去毛刺（微去除，几何上不建）"] },
+    { "no": "7", "graded": false, "kind": "neutral", "method": "检验", "method_ok_alt": [],
+      "target_terms": [], "targets": [], "expected_tool_use": "none", "ambiguity": [] },
+    { "no": "8", "graded": false, "kind": "neutral", "method": "入库", "method_ok_alt": [],
+      "target_terms": [], "targets": [], "expected_tool_use": "none", "ambiguity": [] }
+  ]
+}

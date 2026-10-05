@@ -1,0 +1,248 @@
+{
+  "schema_version": "1.0",
+  "part": "输出轴_ShuChuZhou",
+  "plan_sha1": "2e96a18f18b0e68bc8e1d47c5bb1fb685d29f316",
+  "ops": [
+    {
+      "no": "1",
+      "name": "下料",
+      "text": "棒料 φ90mm × 400mm",
+      "kind": "neutral",
+      "method": "下料",
+      "target": "",
+      "size": { "items": [], "note": "" },
+      "datum": "",
+      "fixture": "",
+      "source": "text",
+      "bodies": [],
+      "not_modeled": ["R5"],
+      "pending": ""
+    },
+    {
+      "no": "2",
+      "name": "热处理",
+      "text": "调质处理 28 ~ 32HRC",
+      "kind": "neutral",
+      "method": "热处理",
+      "target": "",
+      "size": { "items": [], "note": "" },
+      "datum": "",
+      "fixture": "",
+      "source": "text",
+      "bodies": [],
+      "not_modeled": [],
+      "pending": ""
+    },
+    {
+      "no": "3",
+      "name": "车",
+      "text": "夹左端，车右端面，见平即可。钻中心孔 B2.5，粗车右端各部，φ88mm 见圆即可，其余均留精加工余量 3mm",
+      "kind": "removal",
+      "method": "车",
+      "target": "右端面、右端外圆各部",
+      "size": {
+        "items": [
+          { "what": "dia", "value": 88.0, "role": "stock", "source": "text",
+            "note": "φ88mm 见圆即可：去黑皮，句中给了数就用该数（§三第 3 级）" }
+        ],
+        "note": "「车右端面，见平即可」句中未给数 → 只要求车光、不给尺寸；「其余各部」= 成品尺寸 + 留精加工余量 3mm，需从成品量取（R8 第 3 级 / R11）"
+      },
+      "datum": "",
+      "fixture": "夹左端",
+      "source": "blank_minus_allowance",
+      "bodies": [],
+      "not_modeled": ["R3"],
+      "pending": ""
+    },
+    {
+      "no": "4",
+      "name": "车",
+      "text": "倒头装夹工件，车端面保证总长 380mm，钻中心孔 B2.5，粗车外圆各部，留精加工余量 3mm，与工序 3 加工部分相接",
+      "kind": "removal",
+      "method": "车",
+      "target": "另一端面、另一端外圆各部",
+      "size": {
+        "items": [
+          { "what": "len", "value": 380.0, "role": "final", "source": "text",
+            "note": "总长，成品亦为 380" }
+        ],
+        "note": "「粗车外圆各部，留精加工余量 3mm」= 成品 + 3，需从成品量取（R8 / R11）；「与工序 3 加工部分相接」= 与工序 3 的同一批目标尺寸相接，不是新尺寸"
+      },
+      "datum": "",
+      "fixture": "倒头装夹工件",
+      "source": "blank_minus_allowance",
+      "bodies": [],
+      "not_modeled": ["R3"],
+      "pending": ""
+    },
+    {
+      "no": "5",
+      "name": "精车",
+      "text": "夹左端，顶右端，精车右端各部，其中 φ60(+0.024/+0.011)mm × 35mm、φ80(+0.021/+0.002)mm × 78mm 处分别留磨削余量 0.8mm",
+      "kind": "removal",
+      "method": "精车",
+      "target": "右端外圆（φ60×35、φ80×78）及其余各部",
+      "size": {
+        "items": [
+          { "what": "dia", "value": 60.8, "role": "intermediate", "source": "blank_minus_allowance",
+            "note": "本序车到的尺寸 = 成品 φ60 + 磨削余量 0.8（R11）" },
+          { "what": "dia", "value": 60.0, "tol": [0.011, 0.024], "role": "final", "source": "text",
+            "note": "该处图样尺寸，工序 7 磨到" },
+          { "what": "len", "value": 35.0, "role": "final", "source": "text" },
+          { "what": "dia", "value": 80.8, "role": "intermediate", "source": "blank_minus_allowance",
+            "note": "成品 φ80 + 0.8（R11）" },
+          { "what": "dia", "value": 80.0, "tol": [0.002, 0.021], "role": "final", "source": "text" },
+          { "what": "len", "value": 78.0, "role": "final", "source": "text" }
+        ],
+        "note": "「精车右端各部」中未列出的部位需从成品量取（R8）"
+      },
+      "datum": "右端中心孔",
+      "fixture": "夹左端，顶右端",
+      "source": "blank_minus_allowance",
+      "bodies": [],
+      "not_modeled": [],
+      "pending": ""
+    },
+    {
+      "no": "6",
+      "name": "精车",
+      "text": "倒头，一夹一顶精车另一端各部，其中 φ54.4(+0.05/0)mm × 85mm、φ60(+0.024/+0.011)mm × 77mm 处分别留磨削余量 0.8mm",
+      "kind": "removal",
+      "method": "精车",
+      "target": "另一端外圆（φ54.4×85、φ60×77）及其余各部",
+      "size": {
+        "items": [
+          { "what": "dia", "value": 54.4, "tol": [0.0, 0.05], "role": "final", "source": "text" },
+          { "what": "len", "value": 85.0, "role": "final", "source": "text" },
+          { "what": "dia", "value": 55.2, "role": "intermediate", "source": "blank_minus_allowance",
+            "note": "成品 φ54.4 + 0.8（R11）" },
+          { "what": "dia", "value": 60.0, "tol": [0.011, 0.024], "role": "final", "source": "text" },
+          { "what": "len", "value": 77.0, "role": "final", "source": "text" },
+          { "what": "dia", "value": 60.8, "role": "intermediate", "source": "blank_minus_allowance",
+            "note": "成品 φ60 + 0.8（R11）" }
+        ],
+        "note": "「另一端各部」中未列出的部位需从成品量取（R8）"
+      },
+      "datum": "两端中心孔",
+      "fixture": "倒头，一夹一顶",
+      "source": "blank_minus_allowance",
+      "bodies": [],
+      "not_modeled": [],
+      "pending": ""
+    },
+    {
+      "no": "7",
+      "name": "磨",
+      "text": "用两顶尖装夹工件，磨削 φ60(+0.024/+0.011)mm 两处、φ80(+0.021/+0.002)mm 至图样要求尺寸",
+      "kind": "removal",
+      "method": "磨",
+      "target": "φ60 两处、φ80 一处",
+      "size": {
+        "items": [
+          { "what": "dia", "value": 60.0, "tol": [0.011, 0.024], "role": "final", "source": "text",
+            "note": "两处" },
+          { "what": "dia", "value": 80.0, "tol": [0.002, 0.021], "role": "final", "source": "text" }
+        ],
+        "note": "「至图样要求尺寸」但同句给了数 → 用该数（§三第 2 级）"
+      },
+      "datum": "两端中心孔",
+      "fixture": "用两顶尖装夹工件",
+      "source": "text",
+      "bodies": [],
+      "not_modeled": [],
+      "pending": ""
+    },
+    {
+      "no": "8",
+      "name": "磨",
+      "text": "倒头，用两顶尖装夹工件，磨削 φ54.4(+0.05/0)mm × 85mm 至图样要求尺寸",
+      "kind": "removal",
+      "method": "磨",
+      "target": "φ54.4 × 85 外圆",
+      "size": {
+        "items": [
+          { "what": "dia", "value": 54.4, "tol": [0.0, 0.05], "role": "final", "source": "text" },
+          { "what": "len", "value": 85.0, "role": "final", "source": "text" }
+        ],
+        "note": ""
+      },
+      "datum": "两端中心孔",
+      "fixture": "倒头，用两顶尖装夹工件",
+      "source": "text",
+      "bodies": [],
+      "not_modeled": [],
+      "pending": ""
+    },
+    {
+      "no": "9",
+      "name": "划线",
+      "text": "划两处键槽线",
+      "kind": "neutral",
+      "method": "划线",
+      "target": "",
+      "size": { "items": [], "note": "" },
+      "datum": "",
+      "fixture": "",
+      "source": "text",
+      "bodies": [],
+      "not_modeled": [],
+      "pending": ""
+    },
+    {
+      "no": "10",
+      "name": "铣",
+      "text": "铣 18(0/-0.043)mm 键槽两处",
+      "kind": "removal",
+      "method": "铣",
+      "target": "两处键槽",
+      "size": {
+        "items": [
+          { "what": "width", "value": 18.0, "tol": [-0.043, 0.0], "role": "final", "source": "text" },
+          { "what": "len", "value": 73.0, "role": "final", "source": "geometry", "must_call_tool": true,
+            "note": "φ54.4 段键槽长，居中，文本未给 → 从成品量取" },
+          { "what": "depth", "value": 6.9, "role": "final", "source": "geometry", "must_call_tool": true },
+          { "what": "len", "value": 67.0, "role": "final", "source": "geometry", "must_call_tool": true,
+            "note": "φ80 段键槽长，两端各留 5.5" },
+          { "what": "depth", "value": 7.0, "role": "final", "source": "geometry", "must_call_tool": true }
+        ],
+        "note": "键槽的长 / 深 / 位置文本未给，从成品量取（R8 第 4 级）"
+      },
+      "datum": "",
+      "fixture": "",
+      "source": "geometry",
+      "bodies": [],
+      "not_modeled": [],
+      "pending": ""
+    },
+    {
+      "no": "11",
+      "name": "检验",
+      "text": "按图样检查各部尺寸精度",
+      "kind": "neutral",
+      "method": "检验",
+      "target": "",
+      "size": { "items": [], "note": "" },
+      "datum": "",
+      "fixture": "",
+      "source": "text",
+      "bodies": [],
+      "not_modeled": [],
+      "pending": ""
+    },
+    {
+      "no": "12",
+      "name": "入库",
+      "text": "涂油入库",
+      "kind": "neutral",
+      "method": "入库",
+      "target": "",
+      "size": { "items": [], "note": "" },
+      "datum": "",
+      "fixture": "",
+      "source": "text",
+      "bodies": [],
+      "not_modeled": [],
+      "pending": ""
+    }
+  ]
+}

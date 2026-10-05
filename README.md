@@ -16,7 +16,7 @@
 | `data/` | 10 个典型工件的 毛坯/成品 STEP 与 工艺规程.txt（+ `README.md` 逐件留档，**人看，不进提示词**） | 是（数据集是实验载体） |
 | `kb/` | 给解析智能体的领域知识：解析规则 R1–R16、术语与省略写法（W8 检索增强的落点） | 是 |
 | `src/` | 全部代码 | 是 |
-| `exp/` | 标注集、异常样本、回归用例、实验数据与结果表 | 是（结果表要留档） |
+| `exp/` | 参照解析集（`plans/`）、标注规范、异常样本、回归用例、实验数据与结果表 | 是（结果表要留档） |
 | `out/` | 中间 STEP 模型、操作日志、工序附图、验证报告 | 否（可随时重建） |
 
 系统的输入 = `data/` 的三个文件 + `kb/` 的规则；`data/README.md` 与 `exp/` 是留档，
@@ -32,6 +32,9 @@
 | `src/verify_steps.py` | 独立验收：换一条通道读回 STEP，核对有效性、体积、包围盒与布尔包含关系 | 已完成（前期） |
 | `src/write_plan.py` | 把工序表按统一版式写成 工艺规程.txt | 已完成（前期） |
 | `src/audit_dims.py` | 一致性核查：成品 STEP 实测直径/端面 vs 工艺规程文本数值 | 已完成（2026-10-05） |
+| `src/process_plan.schema.json` / `src/grade.schema.json` | 三消费者共用的 JSON 契约：W6 交给外部 LLM 的输出 schema、判分器输入、人工录入格式 | 已完成（W2） |
+| `src/plan_schema.py` | 零依赖 JSON Schema 子集校验器（工程不引 jsonschema） | 已完成（W2） |
+| `src/check_plan.py` | 录入校验器（A–I 九项 + `--selftest` 反向自测）＋ 方法清单 / 歧义句清单 | 已完成（W2） |
 
 后续加入：`geotools.py`（几何查询工具）、`operators.py`（材料去除算子库）、
 `replay.py`（重演引擎）、`agent_parse.py`（解析智能体）、`verify_geo.py`（一致性检查）、
@@ -53,7 +56,22 @@
 
 :: 数据集一致性核查（成品实测尺寸 vs 工艺规程文本，可带工件名过滤）
 "D:\FreeCAD 1.1\bin\python.exe" src\audit_dims.py 活塞杆
+
+:: 参照解析录入校验 + 生成 exp/ 下的方法清单与歧义句清单（不加 --no-geo 时含几何强校验）
+"D:\FreeCAD 1.1\bin\python.exe" src\check_plan.py
+
+:: 证明校验器真的会失败：5 个变异体必须都被报出来（R16）
+"D:\FreeCAD 1.1\bin\python.exe" src\check_plan.py --selftest
 ```
+
+## 参照解析（W2）
+
+`exp/plans/<工件>/` 每件一份 `process_plan.json`——把工艺规程逐条工序结构化（类别 / 方法 /
+加工部位 / 目标尺寸与公差 / 基准 / 数值来源 / 是否必须调几何工具）。参照解析集（输出轴、铜套
+2 件）另有一份 `grade.json` 判分块，供 W6 自动逐条比对、并区分「真去量出来的」与「碰巧猜对的」。
+
+**这是答案，不是规则**：可以判分，**不能进提示词**。字段与判定口径见 `exp/标注规范.md` §四，
+规则本体在 `kb/`。计数（含正确率的分母）由 `src/check_plan.py` 算出写进 `exp/plans/index.json`。
 
 ## 数据
 

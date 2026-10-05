@@ -1,0 +1,70 @@
+{
+  "title": "process_plan",
+  "schema_version": "1.0",
+  "_note": "三消费者共用的契约：① W6 让外部 LLM 严格 JSON 结构化输出的目标 schema；② 判分器读参照解析的输入契约；③ 人工录入格式。字段名与 exp/标注规范.md §四 一致。bodies 留到 W5，本阶段 maxItems=0。method 本阶段不冻结枚举（由 check_plan.py 汇总成方法清单），W6 交出去前再冻结。",
+  "type": "object",
+  "required": ["schema_version", "part", "plan_sha1", "ops"],
+  "additionalProperties": false,
+  "properties": {
+    "_note": { "type": "string" },
+    "schema_version": { "type": "string", "enum": ["1.0"] },
+    "part": { "type": "string", "minLength": 1 },
+    "plan_sha1": { "type": "string", "pattern": "^[0-9a-f]{40}$" },
+    "ops": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["no", "name", "text", "kind", "method", "target", "size",
+                     "datum", "fixture", "source", "bodies", "not_modeled", "pending"],
+        "additionalProperties": false,
+        "properties": {
+          "no": { "type": "string", "minLength": 1 },
+          "name": { "type": "string", "minLength": 1 },
+          "text": { "type": "string", "minLength": 1 },
+          "kind": { "type": "string", "enum": ["removal", "neutral", "quasi_removal"] },
+          "method": { "type": "string" },
+          "target": { "type": "string" },
+          "size": {
+            "type": "object",
+            "required": ["items", "note"],
+            "additionalProperties": false,
+            "properties": {
+              "items": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "required": ["what", "value", "role", "source"],
+                  "additionalProperties": false,
+                  "properties": {
+                    "what": { "type": "string",
+                              "enum": ["dia", "len", "width", "depth", "radius", "chamfer", "angle", "pos"] },
+                    "value": { "type": "number" },
+                    "tol": { "type": "array", "items": { "type": "number" },
+                             "minItems": 2, "maxItems": 2 },
+                    "role": { "type": "string", "enum": ["final", "intermediate", "stock"] },
+                    "source": { "type": "string",
+                                "enum": ["text", "blank_minus_allowance", "geometry", "pending"] },
+                    "must_call_tool": { "type": "boolean" },
+                    "note": { "type": "string" }
+                  }
+                }
+              },
+              "note": { "type": "string" }
+            }
+          },
+          "datum": { "type": "string" },
+          "fixture": { "type": "string" },
+          "source": { "type": "string",
+                      "enum": ["text", "blank_minus_allowance", "geometry", "pending"] },
+          "bodies": { "type": "array", "maxItems": 0 },
+          "not_modeled": {
+            "type": "array",
+            "items": { "type": "string", "enum": ["R1", "R2", "R3", "R4", "R5", "R6", "R7"] }
+          },
+          "pending": { "type": "string" }
+        }
+      }
+    }
+  }
+}
