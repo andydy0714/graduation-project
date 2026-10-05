@@ -1,0 +1,273 @@
+{
+  "schema_version": "1.0",
+  "part": "齿圈_ZhiQuan",
+  "plan_sha1": "c5d5eb29e0b71ba658fe3f1a3c19c79d610aee5b",
+  "ops": [
+    {
+      "no": "1",
+      "name": "铸",
+      "text": "铸造",
+      "kind": "neutral",
+      "method": "铸",
+      "target": "",
+      "size": {
+        "items": [],
+        "note": "铸造属非去除类（R5：毛坯 = 下料/锻/铸之后的形状）。书上未给铸件尺寸，毛坯取工序 4/5 粗车后的 φ620 / φ545 × 45（见 data/README.md §三）"
+      },
+      "datum": "",
+      "fixture": "",
+      "source": "text",
+      "bodies": [],
+      "not_modeled": ["R5"],
+      "pending": ""
+    },
+    {
+      "no": "2",
+      "name": "清砂",
+      "text": "清砂",
+      "kind": "neutral",
+      "method": "清砂",
+      "target": "",
+      "size": { "items": [], "note": "" },
+      "datum": "",
+      "fixture": "",
+      "source": "text",
+      "bodies": [],
+      "not_modeled": ["R5"],
+      "pending": ""
+    },
+    {
+      "no": "3",
+      "name": "热处理",
+      "text": "回火 207~241HRB",
+      "kind": "neutral",
+      "method": "热处理",
+      "target": "",
+      "size": { "items": [], "note": "" },
+      "datum": "",
+      "fixture": "",
+      "source": "text",
+      "bodies": [],
+      "not_modeled": [],
+      "pending": ""
+    },
+    {
+      "no": "4",
+      "name": "粗车",
+      "text": "夹外圆，粗车内孔尺寸至 φ545±1mm，车端面，见平即可",
+      "kind": "removal",
+      "method": "粗车",
+      "target": "内孔、端面",
+      "size": {
+        "items": [
+          {
+            "what": "dia",
+            "value": 545.0,
+            "tol": [-1.0, 1.0],
+            "role": "intermediate",
+            "source": "text",
+            "note": "粗车内孔尺寸，带 ±1 的自由公差；成品为 φ550（R10）"
+          }
+        ],
+        "note": "「车端面，见平即可」句中未给数 → 只要求车光、不给尺寸（§三第 3 级）"
+      },
+      "datum": "",
+      "fixture": "夹外圆",
+      "source": "text",
+      "bodies": [],
+      "not_modeled": [],
+      "pending": ""
+    },
+    {
+      "no": "5",
+      "name": "粗车",
+      "text": "以 φ545±1mm 内孔（工艺尺寸）及一端面定位装夹工件，粗车外圆至 φ620±1mm，车端面，保证厚度尺寸 45mm",
+      "kind": "removal",
+      "method": "粗车",
+      "target": "外圆、端面",
+      "size": {
+        "items": [
+          {
+            "what": "dia",
+            "value": 620.0,
+            "tol": [-1.0, 1.0],
+            "role": "intermediate",
+            "source": "text",
+            "note": "粗车外圆尺寸；成品为 φ615"
+          },
+          {
+            "what": "len",
+            "value": 45.0,
+            "role": "intermediate",
+            "source": "text",
+            "note": "粗车厚度 45；工序 6 到 42.5、工序 7 到 40（R10）"
+          }
+        ],
+        "note": ""
+      },
+      "datum": "φ545 内孔及一端面",
+      "fixture": "以 φ545±1mm 内孔（工艺尺寸）及一端面定位装夹",
+      "source": "text",
+      "bodies": [],
+      "not_modeled": [],
+      "pending": ""
+    },
+    {
+      "no": "6",
+      "name": "精车",
+      "text": "以 φ620±1mm 外圆及一端面定位装夹工件，精车内孔至图样尺寸 φ550(0/-0.2)mm，车端面，保证总厚为 42.5mm，倒内角 C1",
+      "kind": "removal",
+      "method": "精车",
+      "target": "内孔、端面",
+      "size": {
+        "items": [
+          {
+            "what": "dia",
+            "value": 550.0,
+            "tol": [-0.2, 0.0],
+            "role": "final",
+            "source": "text",
+            "note": "内孔图样尺寸"
+          },
+          {
+            "what": "len",
+            "value": 42.5,
+            "role": "intermediate",
+            "source": "text",
+            "note": "总厚 42.5；工序 7 倒头车至 40±0.2（R10）"
+          },
+          { "what": "chamfer", "value": 1.0, "role": "final", "source": "text", "note": "倒内角 C1，文本给了 C 值" }
+        ],
+        "note": ""
+      },
+      "datum": "φ620 外圆及一端面",
+      "fixture": "以 φ620±1mm 外圆及一端面定位装夹",
+      "source": "text",
+      "bodies": [],
+      "not_modeled": [],
+      "pending": ""
+    },
+    {
+      "no": "7",
+      "name": "精车",
+      "text": "倒头，以 φ550(0/-0.2)mm 及一端面定位装夹工件，精车外圆至图样尺寸 φ615(0/-0.2)mm，车端面，保证厚度尺寸 40±0.2mm，各部倒角 C1",
+      "kind": "removal",
+      "method": "精车",
+      "target": "外圆、端面",
+      "size": {
+        "items": [
+          {
+            "what": "dia",
+            "value": 615.0,
+            "tol": [-0.2, 0.0],
+            "role": "final",
+            "source": "text",
+            "note": "外圆图样尺寸"
+          },
+          {
+            "what": "len",
+            "value": 40.0,
+            "tol": [-0.2, 0.2],
+            "role": "final",
+            "source": "text",
+            "note": "厚度终值"
+          },
+          { "what": "chamfer", "value": 1.0, "role": "final", "source": "text", "note": "「各部倒角 C1」，文本给了 C 值" },
+          {
+            "what": "chamfer",
+            "value": 2.0,
+            "role": "final",
+            "source": "geometry",
+            "must_call_tool": true,
+            "note": "成品一端外圆为 C2（图 4-48 标注），本数据集文本未体现 → 从成品量取（§三第 4 级）"
+          }
+        ],
+        "note": ""
+      },
+      "datum": "φ550 内孔及一端面",
+      "fixture": "倒头，以 φ550(0/-0.2)mm 及一端面定位装夹",
+      "source": "geometry",
+      "bodies": [],
+      "not_modeled": [],
+      "pending": ""
+    },
+    {
+      "no": "8",
+      "name": "检验",
+      "text": "按图样要求，检查齿坯各部尺寸及精度",
+      "kind": "neutral",
+      "method": "检验",
+      "target": "",
+      "size": { "items": [], "note": "" },
+      "datum": "",
+      "fixture": "",
+      "source": "text",
+      "bodies": [],
+      "not_modeled": [],
+      "pending": ""
+    },
+    {
+      "no": "9",
+      "name": "滚齿",
+      "text": "以 φ550(0/-0.2)mm 内孔及一端面定位装夹工件，滚齿（m=5，z=121）",
+      "kind": "neutral",
+      "method": "滚齿",
+      "target": "",
+      "size": {
+        "items": [],
+        "note": "m=5、z=121 → 齿顶圆 d_a = 5×(121+2) = 615，与成品外圆一致；滚齿只切齿廓，齿廓按 R2 不建，模型几何不变 → 记 neutral"
+      },
+      "datum": "",
+      "fixture": "",
+      "source": "text",
+      "bodies": [],
+      "not_modeled": ["R2"],
+      "pending": ""
+    },
+    {
+      "no": "10",
+      "name": "钳工",
+      "text": "去毛刺，尖角倒钝",
+      "kind": "neutral",
+      "method": "钳工",
+      "target": "",
+      "size": { "items": [], "note": "去毛刺、尖角倒钝属微去除，几何上不建" },
+      "datum": "",
+      "fixture": "",
+      "source": "text",
+      "bodies": [],
+      "not_modeled": ["R4"],
+      "pending": ""
+    },
+    {
+      "no": "11",
+      "name": "检验",
+      "text": "按图样要求检查工件各部尺寸及精度",
+      "kind": "neutral",
+      "method": "检验",
+      "target": "",
+      "size": { "items": [], "note": "" },
+      "datum": "",
+      "fixture": "",
+      "source": "text",
+      "bodies": [],
+      "not_modeled": [],
+      "pending": ""
+    },
+    {
+      "no": "12",
+      "name": "入库",
+      "text": "涂油入库",
+      "kind": "neutral",
+      "method": "入库",
+      "target": "",
+      "size": { "items": [], "note": "" },
+      "datum": "",
+      "fixture": "",
+      "source": "text",
+      "bodies": [],
+      "not_modeled": [],
+      "pending": ""
+    }
+  ]
+}
