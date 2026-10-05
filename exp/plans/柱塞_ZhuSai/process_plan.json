@@ -1,0 +1,309 @@
+{
+  "schema_version": "1.0",
+  "part": "柱塞_ZhuSai",
+  "plan_sha1": "9c6227a058eec8ec371960ccde83321a32544d2c",
+  "ops": [
+    {
+      "no": "1",
+      "name": "下料",
+      "text": "棒料 φ25mm × 142mm",
+      "kind": "neutral",
+      "method": "下料",
+      "target": "",
+      "size": { "items": [], "note": "" },
+      "datum": "",
+      "fixture": "",
+      "source": "text",
+      "bodies": [],
+      "not_modeled": ["R5"],
+      "pending": ""
+    },
+    {
+      "no": "2",
+      "name": "热处理",
+      "text": "正火处理",
+      "kind": "neutral",
+      "method": "热处理",
+      "target": "",
+      "size": { "items": [], "note": "" },
+      "datum": "",
+      "fixture": "",
+      "source": "text",
+      "bodies": [],
+      "not_modeled": [],
+      "pending": ""
+    },
+    {
+      "no": "3",
+      "name": "车",
+      "text": "夹左端，车右端面，见平即可，外圆车至 φ20.8mm，车右端工艺凸台 φ8mm × 10mm，钻中心孔 A2.5，按图样尺寸距右端面 4.5mm 处切槽 φ17mm × 3mm，倒角 C2",
+      "kind": "removal",
+      "method": "车",
+      "target": "右端面、外圆、右端工艺凸台、退刀槽",
+      "size": {
+        "items": [
+          {
+            "what": "dia",
+            "value": 20.8,
+            "role": "intermediate",
+            "source": "text",
+            "note": "粗车外圆尺寸；成品 φ20(-0.01/-0.02)，工序 8 磨到"
+          },
+          {
+            "what": "dia",
+            "value": 8.0,
+            "role": "intermediate",
+            "source": "text",
+            "note": "右端工艺凸台外圆；中间态，毛坯与成品都没有（R7）"
+          },
+          { "what": "len", "value": 10.0, "role": "intermediate", "source": "text", "note": "工艺凸台长（R7）" },
+          { "what": "dia", "value": 17.0, "role": "final", "source": "text", "note": "退刀槽底径" },
+          { "what": "width", "value": 3.0, "role": "final", "source": "text", "note": "退刀槽宽" },
+          {
+            "what": "len",
+            "value": 4.5,
+            "role": "intermediate",
+            "source": "text",
+            "note": "「距右端面 4.5mm 处切槽」写的是当时的右端面；工序 9 切除凸台、工序 10 磨右端面后，该尺寸终值为 4(+0.15/0)（R10）"
+          },
+          { "what": "chamfer", "value": 2.0, "role": "final", "source": "text", "note": "倒角 C2，文本给了 C 值" }
+        ],
+        "note": "「车右端面，见平即可」句中未给数 → 只要求车光、不给尺寸（§三第 3 级）"
+      },
+      "datum": "",
+      "fixture": "夹左端",
+      "source": "text",
+      "bodies": [],
+      "not_modeled": ["R3", "R7"],
+      "pending": ""
+    },
+    {
+      "no": "4",
+      "name": "车",
+      "text": "倒头装夹 φ20.8mm 外圆，加工另一端面，保证总长 140.6mm，车端面工艺凸台 φ8mm × 10mm，保证工件有效长度 120.6mm，钻中心孔 A2.5，倒角 C2",
+      "kind": "removal",
+      "method": "车",
+      "target": "另一端面、端面工艺凸台",
+      "size": {
+        "items": [
+          {
+            "what": "len",
+            "value": 140.6,
+            "role": "intermediate",
+            "source": "text",
+            "note": "含两端工艺凸台的总长（R7）"
+          },
+          { "what": "dia", "value": 8.0, "role": "intermediate", "source": "text", "note": "端面工艺凸台外圆（R7）" },
+          {
+            "what": "len",
+            "value": 120.6,
+            "role": "intermediate",
+            "source": "text",
+            "note": "工件有效长度（不含凸台）；工序 11 磨至 120"
+          },
+          { "what": "chamfer", "value": 2.0, "role": "final", "source": "text", "note": "倒角 C2" }
+        ],
+        "note": ""
+      },
+      "datum": "",
+      "fixture": "倒头装夹 φ20.8mm 外圆",
+      "source": "text",
+      "bodies": [],
+      "not_modeled": ["R3", "R7"],
+      "pending": ""
+    },
+    {
+      "no": "5",
+      "name": "热处理",
+      "text": "盐浴淬火 58 ~ 62HRC",
+      "kind": "neutral",
+      "method": "热处理",
+      "target": "",
+      "size": { "items": [], "note": "" },
+      "datum": "",
+      "fixture": "",
+      "source": "text",
+      "bodies": [],
+      "not_modeled": [],
+      "pending": ""
+    },
+    {
+      "no": "6",
+      "name": "冷处理",
+      "text": "冰冷处理（液氮或干冰）",
+      "kind": "neutral",
+      "method": "冷处理",
+      "target": "",
+      "size": { "items": [], "note": "" },
+      "datum": "",
+      "fixture": "",
+      "source": "text",
+      "bodies": [],
+      "not_modeled": [],
+      "pending": ""
+    },
+    {
+      "no": "7",
+      "name": "磨",
+      "text": "修研两端中心孔",
+      "kind": "neutral",
+      "method": "磨",
+      "target": "",
+      "size": { "items": [], "note": "「修研两端中心孔」只动中心孔，中心孔按 R3 不建、修研属微去除（R4）；模型外形不变 → 记 neutral，不入正确率分母" },
+      "datum": "",
+      "fixture": "",
+      "source": "text",
+      "bodies": [],
+      "not_modeled": ["R3", "R4"],
+      "pending": ""
+    },
+    {
+      "no": "8",
+      "name": "精磨",
+      "text": "两中心孔定位装夹工件，磨 φ20(-0.01/-0.02)mm（具体尺寸要与柱塞套配磨）保证柱塞与柱塞套的间隙 0.005 ~ 0.008mm",
+      "kind": "removal",
+      "method": "精磨",
+      "target": "φ20 外圆",
+      "size": {
+        "items": [
+          {
+            "what": "dia",
+            "value": 20.0,
+            "tol": [-0.02, -0.01],
+            "role": "final",
+            "source": "text",
+            "note": "R13：文本「具体尺寸要与柱塞套配磨，保证间隙 0.005~0.008」——配对件不在数据集内，以成品 STEP 的 φ20 为准"
+          }
+        ],
+        "note": ""
+      },
+      "datum": "两端中心孔",
+      "fixture": "两中心孔定位装夹工件",
+      "source": "text",
+      "bodies": [],
+      "not_modeled": [],
+      "pending": ""
+    },
+    {
+      "no": "9",
+      "name": "线切割",
+      "text": "采用开口铜套装夹工件，切除两端工艺凸台，保证工件总长 120.6mm",
+      "kind": "removal",
+      "method": "线切割",
+      "target": "两端工艺凸台、总长",
+      "size": {
+        "items": [
+          {
+            "what": "len",
+            "value": 120.6,
+            "role": "intermediate",
+            "source": "text",
+            "note": "切除凸台后的总长；工序 11 磨至 120（R10）"
+          }
+        ],
+        "note": "切除两端 φ8×10 工艺凸台（R7）：凸台在毛坯里不显、在成品里没有，本序把它切掉，重演时才看得到中间态"
+      },
+      "datum": "",
+      "fixture": "采用开口铜套装夹工件",
+      "source": "text",
+      "bodies": [],
+      "not_modeled": [],
+      "pending": ""
+    },
+    {
+      "no": "10",
+      "name": "磨",
+      "text": "采用开口铜套装夹工件，磨右端面保证尺寸 4(+0.15/0)mm",
+      "kind": "removal",
+      "method": "磨",
+      "target": "右端面",
+      "size": {
+        "items": [
+          {
+            "what": "len",
+            "value": 4.0,
+            "tol": [0.0, 0.15],
+            "role": "final",
+            "source": "text",
+            "note": "「磨右端面保证尺寸 4(+0.15/0)mm」——与工序 3 的 4.5 同指该槽位，差 0.5 为工序 9/10 磨掉的量（R10）"
+          }
+        ],
+        "note": ""
+      },
+      "datum": "",
+      "fixture": "采用开口铜套装夹工件",
+      "source": "text",
+      "bodies": [],
+      "not_modeled": [],
+      "pending": ""
+    },
+    {
+      "no": "11",
+      "name": "磨",
+      "text": "采用开口铜套装夹工件，磨左端面保证工件总长 120mm",
+      "kind": "removal",
+      "method": "磨",
+      "target": "左端面、总长",
+      "size": {
+        "items": [
+          { "what": "len", "value": 120.0, "role": "final", "source": "text", "note": "总长终值" }
+        ],
+        "note": ""
+      },
+      "datum": "",
+      "fixture": "采用开口铜套装夹工件",
+      "source": "text",
+      "bodies": [],
+      "not_modeled": [],
+      "pending": ""
+    },
+    {
+      "no": "12",
+      "name": "研磨",
+      "text": "研磨右端面，保证其对 φ20(-0.01/-0.02)mm 轴线的垂直度公差 0.006mm，并与配套的柱塞套一同做标记",
+      "kind": "neutral",
+      "method": "研磨",
+      "target": "",
+      "size": {
+        "items": [],
+        "note": "「研磨右端面，保证其对 φ20(-0.01/-0.02)mm 轴线的垂直度公差 0.006mm，并与配套的柱塞套一同做标记」——研磨属微去除（R4）、做标记不改变几何，模型外形不变 → 记 neutral"
+      },
+      "datum": "",
+      "fixture": "",
+      "source": "text",
+      "bodies": [],
+      "not_modeled": ["R4"],
+      "pending": ""
+    },
+    {
+      "no": "13",
+      "name": "检验",
+      "text": "按图样检查各部尺寸精度，探伤检查有无裂纹、夹渣等缺陷，并检测硬度，切下的工艺凸台做金相组织检查",
+      "kind": "neutral",
+      "method": "检验",
+      "target": "",
+      "size": { "items": [], "note": "" },
+      "datum": "",
+      "fixture": "",
+      "source": "text",
+      "bodies": [],
+      "not_modeled": [],
+      "pending": ""
+    },
+    {
+      "no": "14",
+      "name": "入库",
+      "text": "涂油入库",
+      "kind": "neutral",
+      "method": "入库",
+      "target": "",
+      "size": { "items": [], "note": "" },
+      "datum": "",
+      "fixture": "",
+      "source": "text",
+      "bodies": [],
+      "not_modeled": [],
+      "pending": ""
+    }
+  ]
+}
