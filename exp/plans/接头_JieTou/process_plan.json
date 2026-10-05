@@ -1,0 +1,215 @@
+{
+  "schema_version": "1.0",
+  "part": "接头_JieTou",
+  "plan_sha1": "140757a4a673c88d6c954419955dfb8967301522",
+  "ops": [
+    {
+      "no": "1",
+      "name": "下料",
+      "text": "棒料 φ50mm × 340mm（五件连下）",
+      "kind": "neutral",
+      "method": "下料",
+      "target": "",
+      "size": { "items": [], "note": "" },
+      "datum": "",
+      "fixture": "",
+      "source": "text",
+      "bodies": [],
+      "not_modeled": ["R5", "R6"],
+      "pending": ""
+    },
+    {
+      "no": "2",
+      "name": "车",
+      "text": "自定心卡盘装夹工件，车一端面见平即可，钻 φ15mm 孔深 60mm，车 M27×2-6g 螺纹外径至 φ27(-0.026/-0.206)mm 长 16mm，倒六方左端面 30°角，切槽 3mm×φ22mm，车螺纹 M27×2-6g 倒角 C1。切下保证总长为 58mm",
+      "kind": "removal",
+      "method": "车",
+      "target": "一端面、内孔、M27 螺纹段、六方左端 30° 倒锥、切槽",
+      "size": {
+        "items": [
+          {
+            "what": "dia",
+            "value": 15.0,
+            "role": "final",
+            "source": "text",
+            "note": "内孔；文本给「钻 φ15mm 孔深 60mm」，零件长 57 → 实为通孔"
+          },
+          {
+            "what": "depth",
+            "value": 60.0,
+            "role": "final",
+            "source": "text",
+            "note": "文本给的孔深 60 大于零件长度，按通孔建"
+          },
+          { "what": "dia", "value": 27.0, "role": "final", "source": "text", "note": "M27×2-6g 名义大径（R1 建光杆）" },
+          {
+            "what": "dia",
+            "value": 27.0,
+            "tol": [-0.206, -0.026],
+            "role": "intermediate",
+            "source": "text",
+            "note": "R9：文本「螺纹外径至 φ27(-0.026/-0.206)」给的是车螺纹前坯料外径，登记为工艺中间尺寸，不参与偏差判定"
+          },
+          { "what": "len", "value": 16.0, "role": "final", "source": "text", "note": "M27 螺纹段长" },
+          {
+            "what": "angle",
+            "value": 30.0,
+            "role": "final",
+            "source": "text",
+            "note": "倒六方左端面 30°角；轴向宽度文本未给"
+          },
+          {
+            "what": "radius",
+            "value": 18.5,
+            "role": "final",
+            "source": "geometry",
+            "must_call_tool": true,
+            "note": "30° 倒锥在端面处的半径（进深 3.3mm 到六方棱），文本只给角度 → 从成品量取"
+          },
+          { "what": "width", "value": 3.0, "role": "final", "source": "text", "note": "切槽宽" },
+          { "what": "dia", "value": 22.0, "role": "final", "source": "text", "note": "切槽底径" },
+          { "what": "chamfer", "value": 1.0, "role": "final", "source": "text", "note": "倒角 C1" },
+          {
+            "what": "len",
+            "value": 58.0,
+            "role": "intermediate",
+            "source": "text",
+            "note": "切下保证总长 58；工序 3 车另一端面至 57（R10）"
+          }
+        ],
+        "note": ""
+      },
+      "datum": "",
+      "fixture": "自定心卡盘装夹工件",
+      "source": "geometry",
+      "bodies": [],
+      "not_modeled": ["R1"],
+      "pending": ""
+    },
+    {
+      "no": "3",
+      "name": "车",
+      "text": "倒头，自定心卡盘夹外圆，车另一端面，保证总长至图样尺寸 57mm 及尺寸 21mm，倒六方右端面 30°角。车锥螺纹外径，板牙套 R1½ 管螺纹，倒角 C1，保证锥螺纹长 15mm",
+      "kind": "removal",
+      "method": "车",
+      "target": "另一端面、锥管螺纹段",
+      "size": {
+        "items": [
+          { "what": "len", "value": 57.0, "role": "final", "source": "text", "note": "总长图样尺寸" },
+          {
+            "what": "len",
+            "value": 21.0,
+            "role": "final",
+            "source": "text",
+            "note": "六方段长；尺寸链 16+3+21+17 = 57"
+          },
+          {
+            "what": "angle",
+            "value": 30.0,
+            "role": "final",
+            "source": "text",
+            "note": "倒六方右端面 30°角；轴向宽度文本未给"
+          },
+          {
+            "what": "radius",
+            "value": 18.5,
+            "role": "final",
+            "source": "geometry",
+            "must_call_tool": true,
+            "note": "30° 倒锥在端面处的半径，文本只给角度 → 从成品量取"
+          },
+          {
+            "what": "dia",
+            "value": 21.8,
+            "role": "final",
+            "source": "geometry",
+            "must_call_tool": true,
+            "note": "R1½ 锥管螺纹段大端直径；文本只说「车锥螺纹外径，板牙套 R1½」，未给数值 → 从成品量取（管螺纹建外圆锥面、不建牙型，R1）"
+          },
+          {
+            "what": "dia",
+            "value": 21.27,
+            "role": "final",
+            "source": "geometry",
+            "must_call_tool": true,
+            "note": "锥管螺纹段小端直径；锥度按图上 1:60，文本未给 → 从成品量取"
+          },
+          { "what": "chamfer", "value": 1.0, "role": "final", "source": "text", "note": "倒角 C1" },
+          { "what": "len", "value": 15.0, "role": "final", "source": "text", "note": "锥螺纹段长" }
+        ],
+        "note": ""
+      },
+      "datum": "",
+      "fixture": "倒头，自定心卡盘夹外圆",
+      "source": "geometry",
+      "bodies": [],
+      "not_modeled": ["R1"],
+      "pending": ""
+    },
+    {
+      "no": "4",
+      "name": "铣",
+      "text": "以 M27×2-6g 及左端面定位，夹紧工件，铣六方尺寸为 42mm",
+      "kind": "removal",
+      "method": "铣",
+      "target": "六方",
+      "size": {
+        "items": [
+          { "what": "width", "value": 42.0, "role": "final", "source": "text", "note": "六方对边尺寸" }
+        ],
+        "note": ""
+      },
+      "datum": "M27×2-6g 螺纹及左端面",
+      "fixture": "以 M27×2-6g 及左端面定位，夹紧工件",
+      "source": "text",
+      "bodies": [],
+      "not_modeled": [],
+      "pending": ""
+    },
+    {
+      "no": "5",
+      "name": "热处理",
+      "text": "发蓝处理",
+      "kind": "neutral",
+      "method": "热处理",
+      "target": "",
+      "size": { "items": [], "note": "" },
+      "datum": "",
+      "fixture": "",
+      "source": "text",
+      "bodies": [],
+      "not_modeled": [],
+      "pending": ""
+    },
+    {
+      "no": "6",
+      "name": "检验",
+      "text": "按图样要求，检查各部尺寸",
+      "kind": "neutral",
+      "method": "检验",
+      "target": "",
+      "size": { "items": [], "note": "" },
+      "datum": "",
+      "fixture": "",
+      "source": "text",
+      "bodies": [],
+      "not_modeled": [],
+      "pending": ""
+    },
+    {
+      "no": "7",
+      "name": "入库",
+      "text": "入库",
+      "kind": "neutral",
+      "method": "入库",
+      "target": "",
+      "size": { "items": [], "note": "" },
+      "datum": "",
+      "fixture": "",
+      "source": "text",
+      "bodies": [],
+      "not_modeled": [],
+      "pending": ""
+    }
+  ]
+}
