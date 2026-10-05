@@ -1,0 +1,449 @@
+{
+  "schema_version": "1.0",
+  "part": "连杆螺钉_LianGanLuoDing",
+  "plan_sha1": "ec92e31657335169778cf4df20c82860fd57f143",
+  "ops": [
+    {
+      "no": "1",
+      "name": "下料",
+      "text": "棒料 φ60mm × 125mm",
+      "kind": "neutral",
+      "method": "下料",
+      "target": "",
+      "size": { "items": [], "note": "" },
+      "datum": "",
+      "fixture": "",
+      "source": "text",
+      "bodies": [],
+      "not_modeled": ["R5"],
+      "pending": ""
+    },
+    {
+      "no": "2",
+      "name": "锻造",
+      "text": "自由锻造成形，锻件尺寸：连杆螺钉头部为 φ52mm × 27mm，杆部为 φ41mm × 183mm，零件总长为 210mm（留有工艺余量）",
+      "kind": "neutral",
+      "method": "锻造",
+      "target": "",
+      "size": { "items": [], "note": "锻件尺寸：头部 φ52mm × 27mm + 杆部 φ41mm × 183mm，总长 210（留工艺余量）；毛坯 STEP 即此形状" },
+      "datum": "",
+      "fixture": "",
+      "source": "text",
+      "bodies": [],
+      "not_modeled": ["R5"],
+      "pending": ""
+    },
+    {
+      "no": "3",
+      "name": "热处理",
+      "text": "正火处理",
+      "kind": "neutral",
+      "method": "热处理",
+      "target": "",
+      "size": { "items": [], "note": "" },
+      "datum": "",
+      "fixture": "",
+      "source": "text",
+      "bodies": [],
+      "not_modeled": [],
+      "pending": ""
+    },
+    {
+      "no": "4",
+      "name": "划线",
+      "text": "划毛坯两端中心孔线，照顾各部分加工余量",
+      "kind": "neutral",
+      "method": "划线",
+      "target": "",
+      "size": { "items": [], "note": "" },
+      "datum": "",
+      "fixture": "",
+      "source": "text",
+      "bodies": [],
+      "not_modeled": [],
+      "pending": ""
+    },
+    {
+      "no": "5",
+      "name": "钻",
+      "text": "钻两端中心孔 A2.5，也可以在车床上加工",
+      "kind": "neutral",
+      "method": "钻",
+      "target": "",
+      "size": { "items": [], "note": "钻两端中心孔 A2.5，只为定位，几何上不建；独立成序 → 记 neutral（规范 §二）" },
+      "datum": "",
+      "fixture": "",
+      "source": "text",
+      "bodies": [],
+      "not_modeled": ["R3"],
+      "pending": ""
+    },
+    {
+      "no": "6",
+      "name": "粗车",
+      "text": "以 φ52mm × 27mm 定位夹紧（毛坯尺寸），顶尖顶紧另一端中心孔，以毛坯外圆找正，将毛坯外圆 φ41mm 车至 φ37mm，长度 185mm",
+      "kind": "removal",
+      "method": "粗车",
+      "target": "外圆、长度",
+      "size": {
+        "items": [
+          {
+            "what": "dia",
+            "value": 37.0,
+            "role": "intermediate",
+            "source": "text",
+            "note": "将毛坯外圆 φ41 车至 φ37"
+          },
+          { "what": "len", "value": 185.0, "role": "intermediate", "source": "text", "note": "φ37 段长" }
+        ],
+        "note": ""
+      },
+      "datum": "两端中心孔",
+      "fixture": "以 φ52×27 定位夹紧（毛坯尺寸），顶尖顶紧另一端中心孔",
+      "source": "text",
+      "bodies": [],
+      "not_modeled": [],
+      "pending": ""
+    },
+    {
+      "no": "7",
+      "name": "粗车",
+      "text": "夹紧 φ37mm 外圆，车另一端毛坯外圆 φ52mm 至 φ48mm",
+      "kind": "removal",
+      "method": "粗车",
+      "target": "另一端毛坯外圆",
+      "size": {
+        "items": [
+          {
+            "what": "dia",
+            "value": 48.0,
+            "role": "intermediate",
+            "source": "text",
+            "note": "将毛坯外圆 φ52 车至 φ48"
+          }
+        ],
+        "note": ""
+      },
+      "datum": "",
+      "fixture": "夹紧 φ37mm 外圆",
+      "source": "text",
+      "bodies": [],
+      "not_modeled": [],
+      "pending": ""
+    },
+    {
+      "no": "8",
+      "name": "热处理",
+      "text": "调质处理 28 ~ 32HRC",
+      "kind": "neutral",
+      "method": "热处理",
+      "target": "",
+      "size": { "items": [], "note": "" },
+      "datum": "",
+      "fixture": "",
+      "source": "text",
+      "bodies": [],
+      "not_modeled": [],
+      "pending": ""
+    },
+    {
+      "no": "9",
+      "name": "精车",
+      "text": "修研两中心孔。夹紧 φ48mm（工艺过程尺寸），顶紧另一端中心孔，车工艺凸台（中心孔处）外圆尺寸至 φ25mm，长 7.5mm，车 φ37mm 外圆至 φ35mm，长 178.5mm",
+      "kind": "removal",
+      "method": "精车",
+      "target": "工艺凸台、外圆",
+      "size": {
+        "items": [
+          { "what": "dia", "value": 25.0, "role": "intermediate", "source": "text", "note": "工艺凸台外圆；中间态（R7）" },
+          { "what": "len", "value": 7.5, "role": "intermediate", "source": "text", "note": "工艺凸台长（R7）" },
+          { "what": "dia", "value": 35.0, "role": "intermediate", "source": "text", "note": "将 φ37 外圆车至 φ35" },
+          { "what": "len", "value": 178.5, "role": "intermediate", "source": "text", "note": "φ35 段长" }
+        ],
+        "note": "「修研两中心孔」按 R3 不建"
+      },
+      "datum": "两端中心孔",
+      "fixture": "夹紧 φ48mm（工艺过程尺寸），顶紧另一端中心孔",
+      "source": "text",
+      "bodies": [],
+      "not_modeled": ["R3", "R7"],
+      "pending": ""
+    },
+    {
+      "no": "10",
+      "name": "精车",
+      "text": "夹 φ35mm（垫上铜皮），车工艺凸台（中心孔部分）φ25mm × 7.5mm，尺寸 φ48mm 车至图样尺寸 φ45mm，倒角 C1",
+      "kind": "removal",
+      "method": "精车",
+      "target": "工艺凸台、φ45 头部、倒角",
+      "size": {
+        "items": [
+          { "what": "dia", "value": 25.0, "role": "intermediate", "source": "text", "note": "工艺凸台外圆（R7）" },
+          { "what": "len", "value": 7.5, "role": "intermediate", "source": "text", "note": "工艺凸台长（R7）" },
+          {
+            "what": "dia",
+            "value": 45.0,
+            "role": "final",
+            "source": "text",
+            "note": "「尺寸 φ48mm 车至图样尺寸 φ45mm」"
+          },
+          { "what": "chamfer", "value": 1.0, "role": "final", "source": "text", "note": "倒角 C1" }
+        ],
+        "note": ""
+      },
+      "datum": "",
+      "fixture": "夹 φ35mm（垫上铜皮）",
+      "source": "text",
+      "bodies": [],
+      "not_modeled": ["R7"],
+      "pending": ""
+    },
+    {
+      "no": "11",
+      "name": "精车",
+      "text": "以两中心孔定位，卡环夹紧 φ45mm 外圆，按图样车连杆螺钉各部尺寸至图样要求，其中 φ34(-0.016/0)mm 处留磨量 0.5mm，保证连杆螺钉头部 φ45mm 长 15.1mm 总长 190mm，螺纹一端长出部分车至 φ25mm，车螺纹部分至 φ30(+0.25/+0.15)mm",
+      "kind": "removal",
+      "method": "精车",
+      "target": "头部、各部、螺纹段",
+      "size": {
+        "items": [
+          {
+            "what": "dia",
+            "value": 34.0,
+            "tol": [-0.016, 0.0],
+            "role": "final",
+            "source": "text",
+            "note": "「φ34(-0.016/0)mm 处留磨量 0.5mm」——图样尺寸，工序 13 磨到"
+          },
+          {
+            "what": "dia",
+            "value": 34.5,
+            "role": "intermediate",
+            "source": "blank_minus_allowance",
+            "note": "本序车到 φ34 + 0.5 磨量 = φ34.5（R11：余量方向未写明按收敛处理）"
+          },
+          {
+            "what": "len",
+            "value": 15.1,
+            "role": "intermediate",
+            "source": "text",
+            "note": "头部 φ45 长 15.1（留 0.1 磨量）；工序 13 磨至 15"
+          },
+          { "what": "len", "value": 190.0, "role": "final", "source": "text", "note": "总长" },
+          {
+            "what": "dia",
+            "value": 25.0,
+            "role": "intermediate",
+            "source": "text",
+            "note": "螺纹一端长出部分车至 φ25（工艺凸台残料，R7）"
+          },
+          {
+            "what": "dia",
+            "value": 30.0,
+            "role": "final",
+            "source": "text",
+            "note": "M30-6g 名义大径（R1 建光杆，与 φ30 杆径同径）"
+          },
+          {
+            "what": "dia",
+            "value": 30.0,
+            "tol": [0.15, 0.25],
+            "role": "intermediate",
+            "source": "text",
+            "note": "R9：文本「车螺纹部分至 φ30(+0.25/+0.15)」给的是车螺纹前坯料外径，登记为工艺中间尺寸，不参与偏差判定"
+          }
+        ],
+        "note": "「按图样车连杆螺钉各部尺寸至图样要求」中未列出的部位需从成品量取（R8）；图 4-7 的 R1 / R0.5 两处圆角未建（螺纹已按大径车成光圆柱，收尾圆角无处安放）"
+      },
+      "datum": "两端中心孔",
+      "fixture": "以两中心孔定位，卡环夹紧 φ45mm 外圆",
+      "source": "blank_minus_allowance",
+      "bodies": [],
+      "not_modeled": ["R1", "R7"],
+      "pending": ""
+    },
+    {
+      "no": "12",
+      "name": "精车",
+      "text": "夹紧 φ34.5mm 外圆（垫上铜皮），并以外圆找正，车螺纹 M30-6g，倒角 C1",
+      "kind": "removal",
+      "method": "精车",
+      "target": "M30 螺纹、倒角",
+      "size": {
+        "items": [
+          {
+            "what": "dia",
+            "value": 34.5,
+            "role": "intermediate",
+            "source": "text",
+            "note": "夹紧用的工艺过程尺寸 = φ34 + 0.5 磨量"
+          },
+          { "what": "dia", "value": 30.0, "role": "final", "source": "text", "note": "M30-6g 名义大径（R1 建光杆）" },
+          { "what": "chamfer", "value": 1.0, "role": "final", "source": "text", "note": "倒角 C1" }
+        ],
+        "note": ""
+      },
+      "datum": "",
+      "fixture": "夹紧 φ34.5mm 外圆（垫上铜皮），并以外圆找正",
+      "source": "text",
+      "bodies": [],
+      "not_modeled": ["R1"],
+      "pending": ""
+    },
+    {
+      "no": "13",
+      "name": "磨",
+      "text": "以两中心孔定位装夹，磨 φ34.5mm 尺寸至图样要求 φ34(-0.016/0)mm，同时磨削 φ45mm 右端面，保证尺寸 15mm",
+      "kind": "removal",
+      "method": "磨",
+      "target": "φ34 定位段、φ45 右端面",
+      "size": {
+        "items": [
+          {
+            "what": "dia",
+            "value": 34.0,
+            "tol": [-0.016, 0.0],
+            "role": "final",
+            "source": "text",
+            "note": "「磨 φ34.5mm 尺寸至图样要求 φ34(-0.016/0)mm」"
+          },
+          {
+            "what": "len",
+            "value": 15.0,
+            "role": "final",
+            "source": "text",
+            "note": "「同时磨削 φ45mm 右端面，保证尺寸 15mm」"
+          }
+        ],
+        "note": ""
+      },
+      "datum": "两端中心孔",
+      "fixture": "以两中心孔定位装夹",
+      "source": "text",
+      "bodies": [],
+      "not_modeled": [],
+      "pending": ""
+    },
+    {
+      "no": "14",
+      "name": "铣",
+      "text": "用 V 形块或组合夹具装夹工件，铣螺纹一端中心孔工艺凸台，与螺纹端面平齐即可。注意不可碰伤螺纹部分",
+      "kind": "removal",
+      "method": "铣",
+      "target": "螺纹一端中心孔工艺凸台",
+      "size": { "items": [], "note": "「与螺纹端面平齐即可」句中未给数 → 不给尺寸；铣掉的是中心孔处的工艺凸台（R7）" },
+      "datum": "",
+      "fixture": "用 V 形块或组合夹具装夹工件",
+      "source": "text",
+      "bodies": [],
+      "not_modeled": ["R7"],
+      "pending": ""
+    },
+    {
+      "no": "15",
+      "name": "铣",
+      "text": "用 V 形块或组合夹具装夹工件，铣另一端工艺凸台，与 φ45mm 端面平齐即可，注意不可碰伤倒角部分",
+      "kind": "removal",
+      "method": "铣",
+      "target": "另一端工艺凸台",
+      "size": { "items": [], "note": "「与 φ45mm 端面平齐即可」句中未给数 → 不给尺寸；铣掉的是工艺凸台（R7）" },
+      "datum": "",
+      "fixture": "用 V 形块或组合夹具装夹工件",
+      "source": "text",
+      "bodies": [],
+      "not_modeled": ["R7"],
+      "pending": ""
+    },
+    {
+      "no": "16",
+      "name": "铣",
+      "text": "用 V 形块或组合夹具装夹工件，铣 φ45mm 处 42mm 尺寸为 42±0.1mm（为以下工序中用）",
+      "kind": "removal",
+      "method": "铣",
+      "target": "φ45 头部两扁",
+      "size": {
+        "items": [
+          {
+            "what": "width",
+            "value": 42.0,
+            "tol": [-0.1, 0.1],
+            "role": "final",
+            "source": "text",
+            "note": "对边 42±0.1；文本说「为以下工序中用」，但后续无工序把它去掉，成品上仍在（成品实测对边 42）"
+          }
+        ],
+        "note": ""
+      },
+      "datum": "",
+      "fixture": "用 V 形块或组合夹具装夹工件",
+      "source": "text",
+      "bodies": [],
+      "not_modeled": [],
+      "pending": ""
+    },
+    {
+      "no": "17",
+      "name": "钻",
+      "text": "用专用钻模或组合夹具装夹工件，钻 2×φ6mm 孔（以 42±0.1mm 尺寸定位）",
+      "kind": "removal",
+      "method": "钻",
+      "target": "2×φ6 过径孔",
+      "size": {
+        "items": [
+          {
+            "what": "dia",
+            "value": 6.0,
+            "role": "final",
+            "source": "text",
+            "note": "2×φ6mm，两孔互成 90°（端视图呈十字）"
+          },
+          {
+            "what": "pos",
+            "value": 165.0,
+            "role": "final",
+            "source": "geometry",
+            "must_call_tool": true,
+            "note": "孔轴线距左端面 165（离右端面 25），文本未给 → 从成品量取（§三第 4 级）"
+          }
+        ],
+        "note": ""
+      },
+      "datum": "φ45 头部（以 42±0.1 的扁面定位）",
+      "fixture": "用专用钻模或组合夹具装夹工件",
+      "source": "geometry",
+      "bodies": [],
+      "not_modeled": [],
+      "pending": ""
+    },
+    {
+      "no": "18",
+      "name": "检验",
+      "text": "按图样要求检验各部，并进行磁粉检测",
+      "kind": "neutral",
+      "method": "检验",
+      "target": "",
+      "size": { "items": [], "note": "" },
+      "datum": "",
+      "fixture": "",
+      "source": "text",
+      "bodies": [],
+      "not_modeled": [],
+      "pending": ""
+    },
+    {
+      "no": "19",
+      "name": "入库",
+      "text": "涂防锈油、包装入库",
+      "kind": "neutral",
+      "method": "入库",
+      "target": "",
+      "size": { "items": [], "note": "" },
+      "datum": "",
+      "fixture": "",
+      "source": "text",
+      "bodies": [],
+      "not_modeled": [],
+      "pending": ""
+    }
+  ]
+}
