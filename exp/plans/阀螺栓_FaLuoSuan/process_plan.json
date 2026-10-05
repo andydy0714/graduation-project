@@ -1,0 +1,196 @@
+{
+  "schema_version": "1.0",
+  "part": "阀螺栓_FaLuoSuan",
+  "plan_sha1": "27a13c5cb9ad3c122cdc281a91ae2c5aee4c46c2",
+  "ops": [
+    {
+      "no": "1",
+      "name": "下料",
+      "text": "棒料 φ24mm×860mm（8 件连下）",
+      "kind": "neutral",
+      "method": "下料",
+      "target": "",
+      "size": { "items": [], "note": "" },
+      "datum": "",
+      "fixture": "",
+      "source": "text",
+      "bodies": [],
+      "not_modeled": ["R5", "R6"],
+      "pending": ""
+    },
+    {
+      "no": "2",
+      "name": "热处理",
+      "text": "调质处理 28~32HRC",
+      "kind": "neutral",
+      "method": "热处理",
+      "target": "",
+      "size": { "items": [], "note": "" },
+      "datum": "",
+      "fixture": "",
+      "source": "text",
+      "bodies": [],
+      "not_modeled": [],
+      "pending": ""
+    },
+    {
+      "no": "3",
+      "name": "车",
+      "text": "棒料穿过主轴孔用自定心卡盘夹紧，车端面、车 M20-7h 外径为 φ19.7~φ19.85mm，长 56mm，倒角 C1。车其余外圆各部，保 φ22(-0.025/-0.085)mm，长 20mm。车右端（按图样方向）M20-7h 外径 φ19.7mm~φ19.85mm，倒角 C1。车 R5 连接圆弧。切断保证总长 101mm",
+      "kind": "removal",
+      "method": "车",
+      "target": "两端面、左端 M20 螺纹段、右端 M20 螺纹段、φ22 定位外圆、R5 过渡、切断",
+      "size": {
+        "items": [
+          { "what": "dia", "value": 20.0, "role": "final", "source": "text", "note": "M20-7h 名义大径（R1 建成光杆）" },
+          {
+            "what": "dia",
+            "value": 19.775,
+            "tol": [-0.075, 0.075],
+            "role": "intermediate",
+            "source": "text",
+            "note": "R9：文本「M20-7h 外径为 φ19.7~φ19.85mm」给的是车螺纹前坯料外径，取中值登记为工艺中间尺寸，不参与偏差判定"
+          },
+          {
+            "what": "len",
+            "value": 56.0,
+            "role": "final",
+            "source": "text",
+            "note": "左端 M20 段长（自左端面到 φ22 台肩，含 R5 过渡的起弧点）"
+          },
+          {
+            "what": "dia",
+            "value": 22.0,
+            "tol": [-0.085, -0.025],
+            "role": "final",
+            "source": "text",
+            "note": "定位外圆"
+          },
+          {
+            "what": "len",
+            "value": 20.0,
+            "role": "final",
+            "source": "text",
+            "note": "φ22 段长 20mm：尺寸链 56|5|10|5|24 里的两处「5」是含 R5 圆弧的过渡段，纯 φ22 圆柱 15mm + 两段圆弧轴向各跨约 3mm"
+          },
+          { "what": "radius", "value": 5.0, "role": "final", "source": "text", "note": "R5 连接圆弧（两处），半径文本给了" },
+          {
+            "what": "len",
+            "value": 101.0,
+            "role": "intermediate",
+            "source": "text",
+            "note": "切断保证总长 101；工序 5 车右端面至 100（R10）"
+          }
+        ],
+        "note": ""
+      },
+      "datum": "",
+      "fixture": "棒料穿过主轴孔，用自定心卡盘夹紧",
+      "source": "text",
+      "bodies": [],
+      "not_modeled": ["R1"],
+      "pending": ""
+    },
+    {
+      "no": "4",
+      "name": "车",
+      "text": "夹 φ22(-0.025/-0.085)mm（垫上铜皮）处，套螺纹 M20-7h 两处（倒头一次）",
+      "kind": "removal",
+      "method": "车",
+      "target": "两处 M20 螺纹",
+      "size": {
+        "items": [
+          {
+            "what": "dia",
+            "value": 20.0,
+            "role": "final",
+            "source": "text",
+            "note": "M20-7h 名义大径（R1 建成光杆）；本序套螺纹，牙型不建"
+          }
+        ],
+        "note": ""
+      },
+      "datum": "φ22 定位外圆",
+      "fixture": "夹 φ22(-0.025/-0.085)mm 处（垫上铜皮），倒头一次",
+      "source": "text",
+      "bodies": [],
+      "not_modeled": ["R1"],
+      "pending": ""
+    },
+    {
+      "no": "5",
+      "name": "车",
+      "text": "自定心卡盘夹 φ22(-0.025/-0.085)mm（垫上铜皮），车右端面，保证总长 100mm，倒角 C1，钻右端孔 φ12.5mm、深 10mm，倒坡口 120°，控制坡口最大直径 φ16.5mm",
+      "kind": "removal",
+      "method": "车",
+      "target": "右端面、右端内孔、孔口坡口",
+      "size": {
+        "items": [
+          { "what": "len", "value": 100.0, "role": "final", "source": "text", "note": "总长终值" },
+          { "what": "dia", "value": 12.5, "role": "final", "source": "text", "note": "右端内孔" },
+          { "what": "depth", "value": 10.0, "role": "final", "source": "text", "note": "孔深" },
+          { "what": "angle", "value": 120.0, "role": "final", "source": "text", "note": "坡口角度" },
+          {
+            "what": "dia",
+            "value": 16.5,
+            "role": "final",
+            "source": "text",
+            "note": "坡口最大直径（孔口锥面的外缘）；文本直接给了数"
+          }
+        ],
+        "note": ""
+      },
+      "datum": "φ22 定位外圆",
+      "fixture": "自定心卡盘夹 φ22(-0.025/-0.085)mm（垫上铜皮）",
+      "source": "text",
+      "bodies": [],
+      "not_modeled": [],
+      "pending": ""
+    },
+    {
+      "no": "6",
+      "name": "热处理",
+      "text": "发蓝处理",
+      "kind": "neutral",
+      "method": "热处理",
+      "target": "",
+      "size": { "items": [], "note": "" },
+      "datum": "",
+      "fixture": "",
+      "source": "text",
+      "bodies": [],
+      "not_modeled": [],
+      "pending": ""
+    },
+    {
+      "no": "7",
+      "name": "检验",
+      "text": "按图样要求检验各部",
+      "kind": "neutral",
+      "method": "检验",
+      "target": "",
+      "size": { "items": [], "note": "" },
+      "datum": "",
+      "fixture": "",
+      "source": "text",
+      "bodies": [],
+      "not_modeled": [],
+      "pending": ""
+    },
+    {
+      "no": "8",
+      "name": "入库",
+      "text": "入库",
+      "kind": "neutral",
+      "method": "入库",
+      "target": "",
+      "size": { "items": [], "note": "" },
+      "datum": "",
+      "fixture": "",
+      "source": "text",
+      "bodies": [],
+      "not_modeled": [],
+      "pending": ""
+    }
+  ]
+}
