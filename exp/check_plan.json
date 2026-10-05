@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-10-05 17:08:10",
+  "checked_at": "2026-10-05 18:11:04",
   "tol_mm": 0.1,
   "geometry_checked": true,
   "parts": [
@@ -18,9 +18,10 @@
         "graded_total": 5
       },
       "geometry": {
-        "verified": 0,
-        "unverified": 0,
-        "exempt": 13
+        "verified": 6,
+        "unverified": 8,
+        "exempt": 0,
+        "exempt_values": []
       },
       "has_grade": false
     },
@@ -39,9 +40,10 @@
         "graded_total": 3
       },
       "geometry": {
-        "verified": 0,
-        "unverified": 1,
-        "exempt": 17
+        "verified": 5,
+        "unverified": 13,
+        "exempt": 0,
+        "exempt_values": []
       },
       "has_grade": false
     },
@@ -59,9 +61,10 @@
         "graded_total": 6
       },
       "geometry": {
-        "verified": 1,
-        "unverified": 2,
-        "exempt": 4
+        "verified": 2,
+        "unverified": 5,
+        "exempt": 0,
+        "exempt_values": []
       },
       "has_grade": false
     },
@@ -81,9 +84,10 @@
         "graded_total": 15
       },
       "geometry": {
-        "verified": 6,
-        "unverified": 4,
-        "exempt": 18
+        "verified": 15,
+        "unverified": 13,
+        "exempt": 0,
+        "exempt_values": []
       },
       "has_grade": false
     },
@@ -102,9 +106,10 @@
         "graded_total": 2
       },
       "geometry": {
-        "verified": 0,
-        "unverified": 0,
-        "exempt": 14
+        "verified": 5,
+        "unverified": 9,
+        "exempt": 0,
+        "exempt_values": []
       },
       "has_grade": false
     },
@@ -125,8 +130,9 @@
       },
       "geometry": {
         "verified": 7,
-        "unverified": 10,
-        "exempt": 1
+        "unverified": 13,
+        "exempt": 0,
+        "exempt_values": []
       },
       "has_grade": true
     },
@@ -146,9 +152,10 @@
         "graded_total": 11
       },
       "geometry": {
-        "verified": 2,
-        "unverified": 3,
-        "exempt": 7
+        "verified": 6,
+        "unverified": 9,
+        "exempt": 0,
+        "exempt_values": []
       },
       "has_grade": false
     },
@@ -167,9 +174,10 @@
         "graded_total": 5
       },
       "geometry": {
-        "verified": 3,
-        "unverified": 4,
-        "exempt": 2
+        "verified": 4,
+        "unverified": 5,
+        "exempt": 0,
+        "exempt_values": []
       },
       "has_grade": true
     },
@@ -187,9 +195,10 @@
         "graded_total": 3
       },
       "geometry": {
-        "verified": 2,
-        "unverified": 3,
-        "exempt": 6
+        "verified": 5,
+        "unverified": 8,
+        "exempt": 0,
+        "exempt_values": []
       },
       "has_grade": false
     },
@@ -210,7 +219,8 @@
       "geometry": {
         "verified": 2,
         "unverified": 4,
-        "exempt": 0
+        "exempt": 0,
+        "exempt_values": []
       },
       "has_grade": false
     }

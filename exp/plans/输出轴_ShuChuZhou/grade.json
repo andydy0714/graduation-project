@@ -45,11 +45,15 @@
         { "what": "dia", "value": 80.0, "tol_mm": 0.1, "allowed_sources": ["text"],
           "must_call_tool": false, "required": true },
         { "what": "len", "value": 78.0, "tol_mm": 0.1, "allowed_sources": ["text"],
-          "must_call_tool": false, "required": true }
+          "must_call_tool": false, "required": true },
+        { "what": "chamfer", "value": 2.0, "tol_mm": 0.1, "allowed_sources": ["geometry"],
+          "must_call_tool": true, "required": true,
+          "note": "φ60 端（成品 z378 端面）C2：整条规程未提「倒角」→ 按 §三第 4 级从成品量取；猜一个数不算对" }
       ],
       "expected_tool_use": "required",
       "ambiguity": ["精车右端各部（各部 → 逐个部位从成品量取）",
-                    "留磨削余量 0.8mm（方向未写明，按 R11 收敛处理）"] },
+                    "留磨削余量 0.8mm（方向未写明，按 R11 收敛处理）",
+                    "未注倒角（规程全篇未提「倒角」→ 从成品量取）"] },
     { "no": "6", "graded": true, "kind": "removal", "method": "精车", "method_ok_alt": ["车"],
       "target_terms": ["另一端", "φ54.4", "φ60", "留磨削余量"],
       "targets": [
@@ -66,13 +70,17 @@
           "must_call_tool": false, "required": true },
         { "what": "dia", "value": 60.8, "tol_mm": 0.1,
           "allowed_sources": ["blank_minus_allowance", "text"],
-          "must_call_tool": false, "required": true, "note": "成品 φ60 + 0.8" }
+          "must_call_tool": false, "required": true, "note": "成品 φ60 + 0.8" },
+        { "what": "chamfer", "value": 2.0, "tol_mm": 0.1, "allowed_sources": ["geometry"],
+          "must_call_tool": true, "required": true,
+          "note": "φ54.4 端（成品 z0 端面）C2：整条规程未提「倒角」→ 按 §三第 4 级从成品量取；猜一个数不算对" }
       ],
       "expected_tool_use": "required",
       "ambiguity": ["倒头（调头，基准翻转）",
                     "一夹一顶（装夹方式，不影响几何）",
                     "精车另一端各部（各部 → 逐个部位从成品量取）",
-                    "留磨削余量 0.8mm（按 R11 收敛处理）"] },
+                    "留磨削余量 0.8mm（按 R11 收敛处理）",
+                    "未注倒角（规程全篇未提「倒角」→ 从成品量取）"] },
     { "no": "7", "graded": true, "kind": "removal", "method": "磨", "method_ok_alt": ["半精磨", "精磨"],
       "target_terms": ["两顶尖", "φ60", "φ80", "两处"],
       "targets": [

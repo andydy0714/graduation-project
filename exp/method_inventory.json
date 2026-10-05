@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-05 17:08:10",
+  "generated_at": "2026-10-05 18:11:04",
   "source": "exp/plans/*/process_plan.json",
   "note": "已录入 process_plan 的工件才算进 by_part_method；未录入的看 raw_scan（只按工序名称列粗分，未经 schema 约束，仅供汇报）",
   "parts_with_plan": [

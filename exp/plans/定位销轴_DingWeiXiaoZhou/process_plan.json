@@ -132,6 +132,14 @@
             "role": "final",
             "source": "text",
             "note": "「将尺寸 φ33mm 车至图样尺寸 φ30mm」"
+          },
+          {
+            "what": "chamfer",
+            "value": 1.0,
+            "role": "final",
+            "source": "geometry",
+            "must_call_tool": true,
+            "note": "φ20 端面 C1（成品 z0 端）：整条规程未提「倒角」→ 按 §三第 4 级从成品量取"
           }
         ],
         "note": ""

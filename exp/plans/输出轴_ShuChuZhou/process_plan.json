@@ -92,7 +92,10 @@
           { "what": "dia", "value": 80.8, "role": "intermediate", "source": "blank_minus_allowance",
             "note": "成品 φ80 + 0.8（R11）" },
           { "what": "dia", "value": 80.0, "tol": [0.002, 0.021], "role": "final", "source": "text" },
-          { "what": "len", "value": 78.0, "role": "final", "source": "text" }
+          { "what": "len", "value": 78.0, "role": "final", "source": "text" },
+          { "what": "chamfer", "value": 2.0, "role": "final", "source": "geometry",
+            "must_call_tool": true,
+            "note": "φ60 端面 C2（成品 z378 端）：整条规程未提「倒角」→ 按 §三第 4 级从成品量取" }
         ],
         "note": "「精车右端各部」中未列出的部位需从成品量取（R8）"
       },
@@ -119,7 +122,10 @@
           { "what": "dia", "value": 60.0, "tol": [0.011, 0.024], "role": "final", "source": "text" },
           { "what": "len", "value": 77.0, "role": "final", "source": "text" },
           { "what": "dia", "value": 60.8, "role": "intermediate", "source": "blank_minus_allowance",
-            "note": "成品 φ60 + 0.8（R11）" }
+            "note": "成品 φ60 + 0.8（R11）" },
+          { "what": "chamfer", "value": 2.0, "role": "final", "source": "geometry",
+            "must_call_tool": true,
+            "note": "φ54.4 端面 C2（成品 z0 端）：整条规程未提「倒角」→ 按 §三第 4 级从成品量取" }
         ],
         "note": "「另一端各部」中未列出的部位需从成品量取（R8）"
       },

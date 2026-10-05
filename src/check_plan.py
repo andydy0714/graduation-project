@@ -214,32 +214,36 @@ def probe_dias(ad, shape):
 
 
 def check_geometry(part, plan, rep, geo, tol):
-    """C：role=final 且 what=dia 的目标必须在成品实测直径里（必要条件；其余项目前不查）。"""
+    """C：role=final 且 what=dia 的目标必须在成品实测直径里（必要条件；其余项目前不查）。
+
+    `not_modeled`（R1–R4/R7：螺纹牙型、齿廓、中心孔、微去除、工艺凸台）**逐项**豁免：
+    被声明不建模的工序里，成品上查得到的项照常记 verified，查不到的才记 exempt。
+    整条工序一起豁免会把「豁免」变成躲避检查的口袋——定位销轴一度是 13 项豁免 / 0 项实测。
+    """
     gk, ad = geo
     files = glob.glob(os.path.join(DATA, part, '成品_*.step'))
     if not files:
         rep.warn(part, '', 'C', '找不到成品 STEP，几何校验跳过（记 unverified）')
-        return {'verified': 0, 'unverified': 0, 'exempt': 0}
+        return {'verified': 0, 'unverified': 0, 'exempt': 0, 'exempt_values': []}
     try:
         shape = gk.read_step(files[0])
         cyl = ad.cylinders_of(shape)
     except Exception as exc:                      # 「取不到几何」与「几何不符」要分开
         rep.warn(part, '', 'C', '读成品 STEP 失败，几何校验跳过：%s' % exc)
-        return {'verified': 0, 'unverified': 0, 'exempt': 0}
+        return {'verified': 0, 'unverified': 0, 'exempt': 0, 'exempt_values': []}
     dias = probe_dias(ad, shape)
     cyl_dias = sorted({d for a, d, _, _ in cyl if a in ('Z', 'X', 'Y')})
-    out = {'verified': 0, 'unverified': 0, 'exempt': 0}
+    out = {'verified': 0, 'unverified': 0, 'exempt': 0, 'exempt_values': []}
     for o in plan['ops']:
-        finals = [i for i in o['size']['items'] if i['role'] == 'final']
-        if o['not_modeled']:
-            out['exempt'] += len(finals)
-            continue
-        for it in finals:
+        for it in [i for i in o['size']['items'] if i['role'] == 'final']:
             if it['what'] != 'dia':
                 out['unverified'] += 1            # 长度/键槽宽/倒角不在 cylinders_of 的可查范围内
                 continue
             if any(abs(it['value'] - d) <= tol for d in dias):
                 out['verified'] += 1
+            elif o['not_modeled']:
+                out['exempt'] += 1                # 工序已声明不建模（R1–R4/R7），查不到不算错
+                out['exempt_values'].append('工序 %s/φ%s' % (o['no'], it['value']))
             else:
                 rep.err(part, o['no'], 'C',
                         '目标直径 φ%s 在成品实测直径（圆柱面 %s，圆边端部 %s）里 %.2fmm 内找不到'
@@ -431,6 +435,9 @@ def run(names, no_geo):
             g = r['geometry']
             print('    几何校验：实测到 %d 项，超出可查范围 %d 项，not_modeled 豁免 %d 项'
                   % (g['verified'], g['unverified'], g['exempt']))
+            if g.get('exempt_values'):
+                print('      豁免项（成品上量不到，逐项列出备查）：%s'
+                      % '，'.join(g['exempt_values']))
         if r['counts'].get('pending'):
             print('    待确认项：%s' % r['counts']['pending'])
     for it in rep.items:
