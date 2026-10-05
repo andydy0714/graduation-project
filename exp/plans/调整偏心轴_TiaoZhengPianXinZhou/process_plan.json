@@ -1,0 +1,162 @@
+{
+  "schema_version": "1.0",
+  "part": "调整偏心轴_TiaoZhengPianXinZhou",
+  "plan_sha1": "fbc8def1e7a319dbe5ef62415aaa4a5f631dcb4e",
+  "ops": [
+    {
+      "no": "1",
+      "name": "下料",
+      "text": "六方钢 14mm×380mm(10 件连下)",
+      "kind": "neutral",
+      "method": "下料",
+      "target": "",
+      "size": { "items": [], "note": "" },
+      "datum": "",
+      "fixture": "",
+      "source": "text",
+      "bodies": [],
+      "not_modeled": ["R5", "R6"],
+      "pending": ""
+    },
+    {
+      "no": "2",
+      "name": "热处理",
+      "text": "调质处理 28 ~ 32HRC",
+      "kind": "neutral",
+      "method": "热处理",
+      "target": "",
+      "size": { "items": [], "note": "" },
+      "datum": "",
+      "fixture": "",
+      "source": "text",
+      "bodies": [],
+      "not_modeled": [],
+      "pending": ""
+    },
+    {
+      "no": "3",
+      "name": "车",
+      "text": "用自定心卡盘夹紧六方钢的一端，卡盘外长度为 40mm，车端面，车螺纹外径 φ8(-0.05/-0.10)mm 及切槽 2×φ6.5mm。保证长度为 10.5mm，倒角 C1，车螺纹 M8。保证总长 34mm 切下",
+      "kind": "removal",
+      "method": "车",
+      "target": "端面、M8 螺纹段、退刀槽",
+      "size": {
+        "items": [
+          { "what": "dia", "value": 8.0, "role": "final", "source": "text", "note": "M8 名义大径（R1 建成光杆）" },
+          {
+            "what": "dia",
+            "value": 8.0,
+            "tol": [-0.1, -0.05],
+            "role": "intermediate",
+            "source": "text",
+            "note": "R9：文本「螺纹外径 φ8(-0.05/-0.10)」是车螺纹前坯料外径，登记为工艺中间尺寸，不参与偏差判定"
+          },
+          { "what": "width", "value": 2.0, "role": "final", "source": "text", "note": "退刀槽宽" },
+          { "what": "dia", "value": 6.5, "role": "final", "source": "text", "note": "退刀槽底径" },
+          {
+            "what": "len",
+            "value": 10.5,
+            "role": "intermediate",
+            "source": "text",
+            "note": "「保证长度为 10.5mm」= 退刀槽 2 + 螺纹 8.5；与工序 4 的 8.5 段互证"
+          },
+          { "what": "chamfer", "value": 1.0, "role": "final", "source": "text", "note": "倒角 C1" },
+          {
+            "what": "len",
+            "value": 34.0,
+            "role": "intermediate",
+            "source": "text",
+            "note": "「保证总长 34mm 切下」；工序 4 车端面后成品总长 33（R10）"
+          }
+        ],
+        "note": ""
+      },
+      "datum": "",
+      "fixture": "自定心卡盘夹紧六方钢的一端，卡盘外长度 40mm",
+      "source": "text",
+      "bodies": [],
+      "not_modeled": ["R1", "R6"],
+      "pending": ""
+    },
+    {
+      "no": "4",
+      "name": "车",
+      "text": "用自定心卡盘或单动卡盘，装夹专用车偏心工装，用 M8 螺纹及螺纹端面锁紧定位，车偏心部分 φ8(-0.03/-0.06)mm，车端面，保证总长 33mm 及 17(+0.1/-0.3)mm，φ12mm × 0.5mm、5mm 钻 M4 螺纹底孔 φ3.3mm，深 12mm，攻螺纹 M4，深 8mm",
+      "kind": "removal",
+      "method": "车",
+      "target": "偏心轴颈、端面、清根、六方左端台阶、M4 底孔",
+      "size": {
+        "items": [
+          {
+            "what": "dia",
+            "value": 8.0,
+            "tol": [-0.06, -0.03],
+            "role": "final",
+            "source": "text",
+            "note": "偏心轴颈直径"
+          },
+          { "what": "len", "value": 33.0, "role": "final", "source": "text", "note": "总长终值" },
+          {
+            "what": "len",
+            "value": 17.0,
+            "tol": [-0.3, 0.1],
+            "role": "final",
+            "source": "text",
+            "note": "偏心轴颈长"
+          },
+          {
+            "what": "pos",
+            "value": 2.0,
+            "role": "final",
+            "source": "geometry",
+            "must_call_tool": true,
+            "note": "偏心量：文本只说「车偏心部分」未给数值 → 从成品量取（相对 M8 基准轴线偏 2mm）"
+          },
+          { "what": "dia", "value": 12.0, "role": "final", "source": "text", "note": "清根直径" },
+          { "what": "width", "value": 0.5, "role": "final", "source": "text", "note": "清根宽（六方左端让位台阶）" },
+          { "what": "len", "value": 5.0, "role": "final", "source": "text", "note": "六方段长；六方是棒料原始形状，本序不车它" },
+          { "what": "dia", "value": 3.3, "role": "final", "source": "text", "note": "M4 攻丝前底孔（R1 的内螺纹对应做法）" },
+          { "what": "depth", "value": 12.0, "role": "final", "source": "text", "note": "底孔深" },
+          { "what": "depth", "value": 8.0, "role": "final", "source": "text", "note": "M4 攻深；图 4-11 上的「8」即此" }
+        ],
+        "note": ""
+      },
+      "datum": "M8 螺纹及螺纹端面",
+      "fixture": "自定心卡盘或单动卡盘，装夹专用车偏心工装，用 M8 螺纹及螺纹端面锁紧定位",
+      "source": "geometry",
+      "bodies": [],
+      "not_modeled": ["R1"],
+      "pending": ""
+    },
+    {
+      "no": "5",
+      "name": "检验",
+      "text": "按图样要求检验各部尺寸",
+      "kind": "neutral",
+      "method": "检验",
+      "target": "",
+      "size": { "items": [], "note": "" },
+      "datum": "",
+      "fixture": "",
+      "source": "text",
+      "bodies": [],
+      "not_modeled": [],
+      "pending": ""
+    },
+    {
+      "no": "6",
+      "name": "入库",
+      "text": "消防锈油、入库",
+      "kind": "neutral",
+      "method": "入库",
+      "target": "",
+      "size": { "items": [], "note": "" },
+      "datum": "",
+      "fixture": "",
+      "source": "text",
+      "bodies": [],
+      "not_modeled": [],
+      "pending": ""
+    }
+  ]
+}
