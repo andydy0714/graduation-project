@@ -1,8 +1,83 @@
 {
-  "generated_at": "2026-10-05 16:49:56",
+  "generated_at": "2026-10-05 17:08:10",
   "note": "计数由 check_plan.py 算出（plan 文件里不手写数字，避免漂移）。",
   "tol_mm": 0.1,
   "parts": [
+    {
+      "part": "定位销轴_DingWeiXiaoZhou",
+      "has_grade": false,
+      "total": 9,
+      "removal": 5,
+      "neutral": 4,
+      "quasi_removal": 0,
+      "graded_total": 5,
+      "pending": [],
+      "sources": {
+        "text": 8,
+        "geometry": 1
+      },
+      "plan_sha1": "9e8d3279e78f852d98063e8b2700a90081cef4f3"
+    },
+    {
+      "part": "接头_JieTou",
+      "has_grade": false,
+      "total": 7,
+      "removal": 3,
+      "neutral": 4,
+      "quasi_removal": 0,
+      "graded_total": 3,
+      "pending": [],
+      "sources": {
+        "text": 5,
+        "geometry": 2
+      },
+      "plan_sha1": "140757a4a673c88d6c954419955dfb8967301522"
+    },
+    {
+      "part": "柱塞_ZhuSai",
+      "has_grade": false,
+      "total": 14,
+      "removal": 6,
+      "neutral": 8,
+      "quasi_removal": 0,
+      "graded_total": 6,
+      "pending": [],
+      "sources": {
+        "text": 14
+      },
+      "plan_sha1": "9c6227a058eec8ec371960ccde83321a32544d2c"
+    },
+    {
+      "part": "活塞杆_HuoSaiGan",
+      "has_grade": false,
+      "total": 26,
+      "removal": 15,
+      "neutral": 11,
+      "quasi_removal": 0,
+      "graded_total": 15,
+      "pending": [],
+      "sources": {
+        "text": 20,
+        "blank_minus_allowance": 5,
+        "geometry": 1
+      },
+      "plan_sha1": "ff409abb95445dea689906f16e196c9ecd3be060"
+    },
+    {
+      "part": "调整偏心轴_TiaoZhengPianXinZhou",
+      "has_grade": false,
+      "total": 6,
+      "removal": 2,
+      "neutral": 4,
+      "quasi_removal": 0,
+      "graded_total": 2,
+      "pending": [],
+      "sources": {
+        "text": 5,
+        "geometry": 1
+      },
+      "plan_sha1": "fbc8def1e7a319dbe5ef62415aaa4a5f631dcb4e"
+    },
     {
       "part": "输出轴_ShuChuZhou",
       "has_grade": true,
@@ -20,6 +95,22 @@
       "plan_sha1": "2e96a18f18b0e68bc8e1d47c5bb1fb685d29f316"
     },
     {
+      "part": "连杆螺钉_LianGanLuoDing",
+      "has_grade": false,
+      "total": 19,
+      "removal": 11,
+      "neutral": 8,
+      "quasi_removal": 0,
+      "graded_total": 11,
+      "pending": [],
+      "sources": {
+        "text": 17,
+        "blank_minus_allowance": 1,
+        "geometry": 1
+      },
+      "plan_sha1": "ec92e31657335169778cf4df20c82860fd57f143"
+    },
+    {
       "part": "铜套_TongTao",
       "has_grade": true,
       "total": 8,
@@ -33,6 +124,35 @@
         "geometry": 2
       },
       "plan_sha1": "b4b422becab610069e27e504876a969d71c7f0d3"
+    },
+    {
+      "part": "阀螺栓_FaLuoSuan",
+      "has_grade": false,
+      "total": 8,
+      "removal": 3,
+      "neutral": 5,
+      "quasi_removal": 0,
+      "graded_total": 3,
+      "pending": [],
+      "sources": {
+        "text": 8
+      },
+      "plan_sha1": "27a13c5cb9ad3c122cdc281a91ae2c5aee4c46c2"
+    },
+    {
+      "part": "齿圈_ZhiQuan",
+      "has_grade": false,
+      "total": 12,
+      "removal": 4,
+      "neutral": 8,
+      "quasi_removal": 0,
+      "graded_total": 4,
+      "pending": [],
+      "sources": {
+        "text": 11,
+        "geometry": 1
+      },
+      "plan_sha1": "c5d5eb29e0b71ba658fe3f1a3c19c79d610aee5b"
     }
   ]
 }

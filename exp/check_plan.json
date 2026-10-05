@@ -1,8 +1,113 @@
 {
-  "checked_at": "2026-10-05 16:49:56",
+  "checked_at": "2026-10-05 17:08:10",
   "tol_mm": 0.1,
   "geometry_checked": true,
   "parts": [
+    {
+      "part": "定位销轴_DingWeiXiaoZhou",
+      "counts": {
+        "total": 9,
+        "removal": 5,
+        "neutral": 4,
+        "quasi_removal": 0,
+        "pending": [],
+        "sources": {
+          "text": 8,
+          "geometry": 1
+        },
+        "graded_total": 5
+      },
+      "geometry": {
+        "verified": 0,
+        "unverified": 0,
+        "exempt": 13
+      },
+      "has_grade": false
+    },
+    {
+      "part": "接头_JieTou",
+      "counts": {
+        "total": 7,
+        "removal": 3,
+        "neutral": 4,
+        "quasi_removal": 0,
+        "pending": [],
+        "sources": {
+          "text": 5,
+          "geometry": 2
+        },
+        "graded_total": 3
+      },
+      "geometry": {
+        "verified": 0,
+        "unverified": 1,
+        "exempt": 17
+      },
+      "has_grade": false
+    },
+    {
+      "part": "柱塞_ZhuSai",
+      "counts": {
+        "total": 14,
+        "removal": 6,
+        "neutral": 8,
+        "quasi_removal": 0,
+        "pending": [],
+        "sources": {
+          "text": 14
+        },
+        "graded_total": 6
+      },
+      "geometry": {
+        "verified": 1,
+        "unverified": 2,
+        "exempt": 4
+      },
+      "has_grade": false
+    },
+    {
+      "part": "活塞杆_HuoSaiGan",
+      "counts": {
+        "total": 26,
+        "removal": 15,
+        "neutral": 11,
+        "quasi_removal": 0,
+        "pending": [],
+        "sources": {
+          "text": 20,
+          "blank_minus_allowance": 5,
+          "geometry": 1
+        },
+        "graded_total": 15
+      },
+      "geometry": {
+        "verified": 6,
+        "unverified": 4,
+        "exempt": 18
+      },
+      "has_grade": false
+    },
+    {
+      "part": "调整偏心轴_TiaoZhengPianXinZhou",
+      "counts": {
+        "total": 6,
+        "removal": 2,
+        "neutral": 4,
+        "quasi_removal": 0,
+        "pending": [],
+        "sources": {
+          "text": 5,
+          "geometry": 1
+        },
+        "graded_total": 2
+      },
+      "geometry": {
+        "verified": 0,
+        "unverified": 0,
+        "exempt": 14
+      },
+      "has_grade": false
+    },
     {
       "part": "输出轴_ShuChuZhou",
       "counts": {
@@ -26,6 +131,28 @@
       "has_grade": true
     },
     {
+      "part": "连杆螺钉_LianGanLuoDing",
+      "counts": {
+        "total": 19,
+        "removal": 11,
+        "neutral": 8,
+        "quasi_removal": 0,
+        "pending": [],
+        "sources": {
+          "text": 17,
+          "blank_minus_allowance": 1,
+          "geometry": 1
+        },
+        "graded_total": 11
+      },
+      "geometry": {
+        "verified": 2,
+        "unverified": 3,
+        "exempt": 7
+      },
+      "has_grade": false
+    },
+    {
       "part": "铜套_TongTao",
       "counts": {
         "total": 8,
@@ -45,9 +172,107 @@
         "exempt": 2
       },
       "has_grade": true
+    },
+    {
+      "part": "阀螺栓_FaLuoSuan",
+      "counts": {
+        "total": 8,
+        "removal": 3,
+        "neutral": 5,
+        "quasi_removal": 0,
+        "pending": [],
+        "sources": {
+          "text": 8
+        },
+        "graded_total": 3
+      },
+      "geometry": {
+        "verified": 2,
+        "unverified": 3,
+        "exempt": 6
+      },
+      "has_grade": false
+    },
+    {
+      "part": "齿圈_ZhiQuan",
+      "counts": {
+        "total": 12,
+        "removal": 4,
+        "neutral": 8,
+        "quasi_removal": 0,
+        "pending": [],
+        "sources": {
+          "text": 11,
+          "geometry": 1
+        },
+        "graded_total": 4
+      },
+      "geometry": {
+        "verified": 2,
+        "unverified": 4,
+        "exempt": 0
+      },
+      "has_grade": false
     }
   ],
   "errors": 0,
-  "warnings": 0,
-  "items": []
+  "warnings": 8,
+  "items": [
+    {
+      "level": "WARN",
+      "part": "定位销轴_DingWeiXiaoZhou",
+      "op": "",
+      "check": "G",
+      "msg": "没有 grade.json（只有参照解析集才有），跳过判分块一致性检查"
+    },
+    {
+      "level": "WARN",
+      "part": "接头_JieTou",
+      "op": "",
+      "check": "G",
+      "msg": "没有 grade.json（只有参照解析集才有），跳过判分块一致性检查"
+    },
+    {
+      "level": "WARN",
+      "part": "柱塞_ZhuSai",
+      "op": "",
+      "check": "G",
+      "msg": "没有 grade.json（只有参照解析集才有），跳过判分块一致性检查"
+    },
+    {
+      "level": "WARN",
+      "part": "活塞杆_HuoSaiGan",
+      "op": "",
+      "check": "G",
+      "msg": "没有 grade.json（只有参照解析集才有），跳过判分块一致性检查"
+    },
+    {
+      "level": "WARN",
+      "part": "调整偏心轴_TiaoZhengPianXinZhou",
+      "op": "",
+      "check": "G",
+      "msg": "没有 grade.json（只有参照解析集才有），跳过判分块一致性检查"
+    },
+    {
+      "level": "WARN",
+      "part": "连杆螺钉_LianGanLuoDing",
+      "op": "",
+      "check": "G",
+      "msg": "没有 grade.json（只有参照解析集才有），跳过判分块一致性检查"
+    },
+    {
+      "level": "WARN",
+      "part": "阀螺栓_FaLuoSuan",
+      "op": "",
+      "check": "G",
+      "msg": "没有 grade.json（只有参照解析集才有），跳过判分块一致性检查"
+    },
+    {
+      "level": "WARN",
+      "part": "齿圈_ZhiQuan",
+      "op": "",
+      "check": "G",
+      "msg": "没有 grade.json（只有参照解析集才有），跳过判分块一致性检查"
+    }
+  ]
 }

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-05 16:49:56",
+  "generated_at": "2026-10-05 17:08:10",
   "note": "省略写法的实际出现位置。用于 W2 汇报与 W8 检索增强；关键词表在 src/check_plan.py 的 KEYWORDS，与 kb/术语与省略写法.md 对账（H 项）。",
   "counts": {
     "hits": 166,

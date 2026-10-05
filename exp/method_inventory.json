@@ -1,10 +1,18 @@
 {
-  "generated_at": "2026-10-05 16:49:56",
+  "generated_at": "2026-10-05 17:08:10",
   "source": "exp/plans/*/process_plan.json",
   "note": "已录入 process_plan 的工件才算进 by_part_method；未录入的看 raw_scan（只按工序名称列粗分，未经 schema 约束，仅供汇报）",
   "parts_with_plan": [
+    "定位销轴_DingWeiXiaoZhou",
+    "接头_JieTou",
+    "柱塞_ZhuSai",
+    "活塞杆_HuoSaiGan",
+    "调整偏心轴_TiaoZhengPianXinZhou",
     "输出轴_ShuChuZhou",
-    "铜套_TongTao"
+    "连杆螺钉_LianGanLuoDing",
+    "铜套_TongTao",
+    "阀螺栓_FaLuoSuan",
+    "齿圈_ZhiQuan"
   ],
   "parts_all": [
     "定位销轴_DingWeiXiaoZhou",
@@ -19,6 +27,59 @@
     "齿圈_ZhiQuan"
   ],
   "by_part_method": {
+    "定位销轴_DingWeiXiaoZhou": {
+      "下料": 1,
+      "粗车": 2,
+      "精车": 2,
+      "热处理": 1,
+      "磨": 1,
+      "检验": 1,
+      "入库": 1
+    },
+    "接头_JieTou": {
+      "下料": 1,
+      "车": 2,
+      "铣": 1,
+      "热处理": 1,
+      "检验": 1,
+      "入库": 1
+    },
+    "柱塞_ZhuSai": {
+      "下料": 1,
+      "热处理": 2,
+      "车": 2,
+      "冷处理": 1,
+      "磨": 3,
+      "精磨": 1,
+      "线切割": 1,
+      "研磨": 1,
+      "检验": 1,
+      "入库": 1
+    },
+    "活塞杆_HuoSaiGan": {
+      "下料": 1,
+      "锻造": 1,
+      "热处理": 3,
+      "划线": 1,
+      "钳工": 1,
+      "粗车": 4,
+      "精车": 2,
+      "磨": 2,
+      "粗磨": 2,
+      "车": 2,
+      "半精磨": 2,
+      "铣": 1,
+      "精磨": 2,
+      "检验": 1,
+      "入库": 1
+    },
+    "调整偏心轴_TiaoZhengPianXinZhou": {
+      "下料": 1,
+      "热处理": 1,
+      "车": 2,
+      "检验": 1,
+      "入库": 1
+    },
     "输出轴_ShuChuZhou": {
       "下料": 1,
       "热处理": 1,
@@ -30,6 +91,19 @@
       "检验": 1,
       "入库": 1
     },
+    "连杆螺钉_LianGanLuoDing": {
+      "下料": 1,
+      "锻造": 1,
+      "热处理": 2,
+      "划线": 1,
+      "钻": 2,
+      "粗车": 2,
+      "精车": 4,
+      "磨": 1,
+      "铣": 3,
+      "检验": 1,
+      "入库": 1
+    },
     "铜套_TongTao": {
       "下料": 1,
       "车": 2,
@@ -37,43 +111,155 @@
       "钳": 1,
       "检验": 1,
       "入库": 1
+    },
+    "阀螺栓_FaLuoSuan": {
+      "下料": 1,
+      "热处理": 2,
+      "车": 3,
+      "检验": 1,
+      "入库": 1
+    },
+    "齿圈_ZhiQuan": {
+      "铸": 1,
+      "清砂": 1,
+      "热处理": 1,
+      "粗车": 2,
+      "精车": 2,
+      "检验": 2,
+      "滚齿": 1,
+      "钳工": 1,
+      "入库": 1
     }
   },
   "by_method_parts": {
     "下料": [
+      "定位销轴_DingWeiXiaoZhou",
+      "接头_JieTou",
+      "柱塞_ZhuSai",
+      "活塞杆_HuoSaiGan",
+      "调整偏心轴_TiaoZhengPianXinZhou",
       "输出轴_ShuChuZhou",
-      "铜套_TongTao"
+      "连杆螺钉_LianGanLuoDing",
+      "铜套_TongTao",
+      "阀螺栓_FaLuoSuan"
     ],
-    "热处理": [
-      "输出轴_ShuChuZhou"
-    ],
-    "车": [
-      "输出轴_ShuChuZhou",
-      "铜套_TongTao"
+    "粗车": [
+      "定位销轴_DingWeiXiaoZhou",
+      "活塞杆_HuoSaiGan",
+      "连杆螺钉_LianGanLuoDing",
+      "齿圈_ZhiQuan"
     ],
     "精车": [
+      "定位销轴_DingWeiXiaoZhou",
+      "活塞杆_HuoSaiGan",
       "输出轴_ShuChuZhou",
-      "铜套_TongTao"
+      "连杆螺钉_LianGanLuoDing",
+      "铜套_TongTao",
+      "齿圈_ZhiQuan"
+    ],
+    "热处理": [
+      "定位销轴_DingWeiXiaoZhou",
+      "接头_JieTou",
+      "柱塞_ZhuSai",
+      "活塞杆_HuoSaiGan",
+      "调整偏心轴_TiaoZhengPianXinZhou",
+      "输出轴_ShuChuZhou",
+      "连杆螺钉_LianGanLuoDing",
+      "阀螺栓_FaLuoSuan",
+      "齿圈_ZhiQuan"
     ],
     "磨": [
-      "输出轴_ShuChuZhou"
-    ],
-    "划线": [
-      "输出轴_ShuChuZhou"
-    ],
-    "铣": [
-      "输出轴_ShuChuZhou"
+      "定位销轴_DingWeiXiaoZhou",
+      "柱塞_ZhuSai",
+      "活塞杆_HuoSaiGan",
+      "输出轴_ShuChuZhou",
+      "连杆螺钉_LianGanLuoDing"
     ],
     "检验": [
+      "定位销轴_DingWeiXiaoZhou",
+      "接头_JieTou",
+      "柱塞_ZhuSai",
+      "活塞杆_HuoSaiGan",
+      "调整偏心轴_TiaoZhengPianXinZhou",
       "输出轴_ShuChuZhou",
-      "铜套_TongTao"
+      "连杆螺钉_LianGanLuoDing",
+      "铜套_TongTao",
+      "阀螺栓_FaLuoSuan",
+      "齿圈_ZhiQuan"
     ],
     "入库": [
+      "定位销轴_DingWeiXiaoZhou",
+      "接头_JieTou",
+      "柱塞_ZhuSai",
+      "活塞杆_HuoSaiGan",
+      "调整偏心轴_TiaoZhengPianXinZhou",
       "输出轴_ShuChuZhou",
-      "铜套_TongTao"
+      "连杆螺钉_LianGanLuoDing",
+      "铜套_TongTao",
+      "阀螺栓_FaLuoSuan",
+      "齿圈_ZhiQuan"
+    ],
+    "车": [
+      "接头_JieTou",
+      "柱塞_ZhuSai",
+      "活塞杆_HuoSaiGan",
+      "调整偏心轴_TiaoZhengPianXinZhou",
+      "输出轴_ShuChuZhou",
+      "铜套_TongTao",
+      "阀螺栓_FaLuoSuan"
+    ],
+    "铣": [
+      "接头_JieTou",
+      "活塞杆_HuoSaiGan",
+      "输出轴_ShuChuZhou",
+      "连杆螺钉_LianGanLuoDing"
+    ],
+    "冷处理": [
+      "柱塞_ZhuSai"
+    ],
+    "精磨": [
+      "柱塞_ZhuSai",
+      "活塞杆_HuoSaiGan"
+    ],
+    "线切割": [
+      "柱塞_ZhuSai"
+    ],
+    "研磨": [
+      "柱塞_ZhuSai"
+    ],
+    "锻造": [
+      "活塞杆_HuoSaiGan",
+      "连杆螺钉_LianGanLuoDing"
+    ],
+    "划线": [
+      "活塞杆_HuoSaiGan",
+      "输出轴_ShuChuZhou",
+      "连杆螺钉_LianGanLuoDing"
+    ],
+    "钳工": [
+      "活塞杆_HuoSaiGan",
+      "齿圈_ZhiQuan"
+    ],
+    "粗磨": [
+      "活塞杆_HuoSaiGan"
+    ],
+    "半精磨": [
+      "活塞杆_HuoSaiGan"
+    ],
+    "钻": [
+      "连杆螺钉_LianGanLuoDing"
     ],
     "钳": [
       "铜套_TongTao"
+    ],
+    "铸": [
+      "齿圈_ZhiQuan"
+    ],
+    "清砂": [
+      "齿圈_ZhiQuan"
+    ],
+    "滚齿": [
+      "齿圈_ZhiQuan"
     ]
   },
   "raw_scan_by_part": {
@@ -219,5 +405,5 @@
       "入库"
     ]
   },
-  "total_ops_with_plan": 20
+  "total_ops_with_plan": 121
 }
