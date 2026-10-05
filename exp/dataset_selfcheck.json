@@ -1,0 +1,476 @@
+{
+  "checked_at": "2026-10-05 15:38:01",
+  "parts": [
+    {
+      "part": "定位销轴_DingWeiXiaoZhou",
+      "blank": {
+        "valid": true,
+        "solids": 1,
+        "faces": 3,
+        "volume": 33673.946255665585,
+        "bbox": [
+          -17.5,
+          -17.5,
+          -2.5,
+          17.5,
+          17.5,
+          32.5
+        ],
+        "size": [
+          35.0,
+          35.0,
+          35.0
+        ]
+      },
+      "finished": {
+        "valid": true,
+        "solids": 1,
+        "faces": 14,
+        "volume": 10098.911384352105,
+        "bbox": [
+          -15.0,
+          -15.0,
+          0.0,
+          15.0,
+          15.0,
+          30.0
+        ],
+        "size": [
+          30.0,
+          30.0,
+          30.0
+        ]
+      },
+      "removed": 10098.911384,
+      "removed_solids": 1,
+      "bbox_inside": true,
+      "volume_conserved": true,
+      "seconds": 0.0078,
+      "ok": true
+    },
+    {
+      "part": "接头_JieTou",
+      "blank": {
+        "valid": true,
+        "solids": 1,
+        "faces": 3,
+        "volume": 113882.73369263,
+        "bbox": [
+          -25.0,
+          -25.0,
+          0.0,
+          25.0,
+          25.0,
+          58.0
+        ],
+        "size": [
+          50.0,
+          50.0,
+          58.0
+        ]
+      },
+      "finished": {
+        "valid": true,
+        "solids": 1,
+        "faces": 19,
+        "volume": 37389.563656567225,
+        "bbox": [
+          -24.248711,
+          -24.248711,
+          0.0,
+          24.248711,
+          24.248711,
+          57.0
+        ],
+        "size": [
+          48.497423,
+          48.497423,
+          57.0
+        ]
+      },
+      "removed": 37389.563655,
+      "removed_solids": 1,
+      "bbox_inside": true,
+      "volume_conserved": true,
+      "seconds": 0.0112,
+      "ok": true
+    },
+    {
+      "part": "柱塞_ZhuSai",
+      "blank": {
+        "valid": true,
+        "solids": 1,
+        "faces": 3,
+        "volume": 69704.08700152354,
+        "bbox": [
+          -12.5,
+          -12.5,
+          -11.0,
+          12.5,
+          12.5,
+          131.0
+        ],
+        "size": [
+          25.0,
+          25.0,
+          142.0
+        ]
+      },
+      "finished": {
+        "valid": true,
+        "solids": 1,
+        "faces": 9,
+        "volume": 37203.00200319635,
+        "bbox": [
+          -10.0,
+          -10.0,
+          0.0,
+          10.0,
+          10.0,
+          120.0
+        ],
+        "size": [
+          20.0,
+          20.0,
+          120.0
+        ]
+      },
+      "removed": 37203.002003,
+      "removed_solids": 1,
+      "bbox_inside": true,
+      "volume_conserved": true,
+      "seconds": 0.0043,
+      "ok": true
+    },
+    {
+      "part": "活塞杆_HuoSaiGan",
+      "blank": {
+        "valid": true,
+        "solids": 1,
+        "faces": 3,
+        "volume": 3471931.1211147597,
+        "bbox": [
+          -31.0,
+          -31.0,
+          -30.0,
+          31.0,
+          31.0,
+          1120.0
+        ],
+        "size": [
+          62.0,
+          62.0,
+          1150.0
+        ]
+      },
+      "finished": {
+        "valid": true,
+        "solids": 1,
+        "faces": 32,
+        "volume": 1908225.9522063504,
+        "bbox": [
+          -25.0,
+          -25.0,
+          0.0,
+          25.0,
+          25.0,
+          1090.0
+        ],
+        "size": [
+          50.0,
+          50.0,
+          1090.0
+        ]
+      },
+      "removed": 1908225.952206,
+      "removed_solids": 1,
+      "bbox_inside": true,
+      "volume_conserved": true,
+      "seconds": 0.0085,
+      "ok": true
+    },
+    {
+      "part": "调整偏心轴_TiaoZhengPianXinZhou",
+      "blank": {
+        "valid": true,
+        "solids": 1,
+        "faces": 8,
+        "volume": 5771.193290819602,
+        "bbox": [
+          -7.0,
+          -8.082904,
+          -1.0,
+          7.0,
+          8.082904,
+          33.0
+        ],
+        "size": [
+          14.0,
+          16.165808,
+          34.0
+        ]
+      },
+      "finished": {
+        "valid": true,
+        "solids": 1,
+        "faces": 19,
+        "volume": 2139.234505889139,
+        "bbox": [
+          -7.0,
+          -8.082904,
+          0.0,
+          7.0,
+          8.082904,
+          33.0
+        ],
+        "size": [
+          14.0,
+          16.165808,
+          33.0
+        ]
+      },
+      "removed": 2139.234506,
+      "removed_solids": 2,
+      "bbox_inside": true,
+      "volume_conserved": true,
+      "seconds": 0.0109,
+      "ok": true
+    },
+    {
+      "part": "输出轴_ShuChuZhou",
+      "blank": {
+        "valid": true,
+        "solids": 1,
+        "faces": 3,
+        "volume": 2544690.0494077327,
+        "bbox": [
+          -45.0,
+          -45.0,
+          -10.0,
+          45.0,
+          45.0,
+          390.0
+        ],
+        "size": [
+          90.0,
+          90.0,
+          400.0
+        ]
+      },
+      "finished": {
+        "valid": true,
+        "solids": 1,
+        "faces": 27,
+        "volume": 1316447.2867311817,
+        "bbox": [
+          -44.0,
+          -44.0,
+          0.0,
+          44.0,
+          44.0,
+          380.0
+        ],
+        "size": [
+          88.0,
+          88.0,
+          380.0
+        ]
+      },
+      "removed": 1316447.286729,
+      "removed_solids": 1,
+      "bbox_inside": true,
+      "volume_conserved": true,
+      "seconds": 0.01,
+      "ok": true
+    },
+    {
+      "part": "连杆螺钉_LianGanLuoDing",
+      "blank": {
+        "valid": true,
+        "solids": 1,
+        "faces": 5,
+        "volume": 298946.8883321341,
+        "bbox": [
+          -26.0,
+          -26.0,
+          -10.0,
+          26.0,
+          26.0,
+          200.0
+        ],
+        "size": [
+          52.0,
+          52.0,
+          210.0
+        ]
+      },
+      "finished": {
+        "valid": true,
+        "solids": 1,
+        "faces": 115,
+        "volume": 157506.8250648905,
+        "bbox": [
+          -21.976744,
+          -22.5,
+          -0.0,
+          21.976744,
+          22.5,
+          190.0
+        ],
+        "size": [
+          43.953488,
+          45.0,
+          190.0
+        ]
+      },
+      "removed": 157506.825068,
+      "removed_solids": 1,
+      "bbox_inside": true,
+      "volume_conserved": true,
+      "seconds": 0.0268,
+      "ok": true
+    },
+    {
+      "part": "铜套_TongTao",
+      "blank": {
+        "valid": true,
+        "solids": 1,
+        "faces": 3,
+        "volume": 63617.2512351933,
+        "bbox": [
+          -22.5,
+          -22.5,
+          -3.0,
+          22.5,
+          22.5,
+          37.0
+        ],
+        "size": [
+          45.0,
+          45.0,
+          40.0
+        ]
+      },
+      "finished": {
+        "valid": true,
+        "solids": 1,
+        "faces": 11,
+        "volume": 6303.9299534450565,
+        "bbox": [
+          -19.5,
+          -19.5,
+          0.0,
+          19.500005,
+          19.5,
+          34.0
+        ],
+        "size": [
+          39.000005,
+          39.0,
+          34.0
+        ]
+      },
+      "removed": 6303.929953,
+      "removed_solids": 1,
+      "bbox_inside": true,
+      "volume_conserved": true,
+      "seconds": 0.0054,
+      "ok": true
+    },
+    {
+      "part": "阀螺栓_FaLuoSuan",
+      "blank": {
+        "valid": true,
+        "solids": 1,
+        "faces": 3,
+        "volume": 45691.32355380995,
+        "bbox": [
+          -12.0,
+          -12.0,
+          -0.5,
+          12.0,
+          12.0,
+          100.5
+        ],
+        "size": [
+          24.0,
+          24.0,
+          101.0
+        ]
+      },
+      "finished": {
+        "valid": true,
+        "solids": 1,
+        "faces": 74,
+        "volume": 31334.545216654056,
+        "bbox": [
+          -11.0,
+          -11.0,
+          0.0,
+          11.0,
+          11.0,
+          100.0
+        ],
+        "size": [
+          22.0,
+          22.0,
+          100.0
+        ]
+      },
+      "removed": 31334.545217,
+      "removed_solids": 1,
+      "bbox_inside": true,
+      "volume_conserved": true,
+      "seconds": 0.012,
+      "ok": true
+    },
+    {
+      "part": "齿圈_ZhiQuan",
+      "blank": {
+        "valid": true,
+        "solids": 1,
+        "faces": 4,
+        "volume": 3088087.4037083434,
+        "bbox": [
+          -310.0,
+          -310.0,
+          -2.5,
+          310.0,
+          310.0,
+          42.5
+        ],
+        "size": [
+          620.0,
+          620.0,
+          45.0
+        ]
+      },
+      "finished": {
+        "valid": true,
+        "solids": 1,
+        "faces": 8,
+        "volume": 2372420.292649453,
+        "bbox": [
+          -307.5,
+          -307.5,
+          0.0,
+          307.5,
+          307.5,
+          40.0
+        ],
+        "size": [
+          615.0,
+          615.0,
+          40.0
+        ]
+      },
+      "removed": 2372420.292649,
+      "removed_solids": 1,
+      "bbox_inside": true,
+      "volume_conserved": true,
+      "seconds": 0.005,
+      "ok": true
+    }
+  ],
+  "failed": []
+}

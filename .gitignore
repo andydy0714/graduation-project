@@ -1,0 +1,11 @@
+# 可重建的产物：中间 STEP 模型、操作日志、工序附图、验证报告
+out/
+
+# Python / 编辑器
+__pycache__/
+*.pyc
+.venv/
+.vscode/
+
+# Office 临时文件
+~$*
