@@ -9,7 +9,8 @@
   A schema        plan/grade 合 src/process_plan.schema.json、src/grade.schema.json
   B 原文还原      每条 op 的 no/name/text 按 write_plan.py 的版式逐行还原 == 工艺规程.txt 字节
   B' 指纹         plan_sha1 == 工艺规程.txt 原始字节的 sha1
-  C 几何自洽      role=final 的 dia 目标必须在成品实测直径里（阈值 geokernel.TOL_MM）
+  C 几何自洽      role=final 的 dia 目标必须在成品实测直径里（阈值 geokernel.TOL_MM）；
+                 可查集合 = 圆柱面直径 + 圆边直径（锥面端部，见 probe_dias）
   D 条数/工序号   与文本行数一致、工序号连续
   E 阶段边界      bodies 必须为空；neutral 工序不得有 target/尺寸
   F 统计/待确认   source 分布、pending 清单（参照解析集应 0 条）
@@ -197,6 +198,21 @@ def check_plan_obj(part, plan, rep, plan_schema):
     return stats
 
 
+def probe_dias(ad, shape):
+    """成品上「量得到」的直径集合：圆柱面直径 + 所有圆边的直径。
+
+    只取 cylinders_of 会漏掉锥面的端部——坡口的最大直径、1:20 锥面的小端、
+    管螺纹锥面的两端，它们不是圆柱面但在成品上是实实在在的圆（圆边）。
+    加进来只会放宽「必要条件」，不会让错值蒙混：值仍须在成品上真的出现。
+    """
+    out = {d for a, d, _, _ in ad.cylinders_of(shape) if a in ('Z', 'X', 'Y')}
+    for e in shape.Edges:
+        c = e.Curve
+        if isinstance(c, ad.Part.Circle):
+            out.add(round(2.0 * c.Radius, 6))
+    return out
+
+
 def check_geometry(part, plan, rep, geo, tol):
     """C：role=final 且 what=dia 的目标必须在成品实测直径里（必要条件；其余项目前不查）。"""
     gk, ad = geo
@@ -210,7 +226,8 @@ def check_geometry(part, plan, rep, geo, tol):
     except Exception as exc:                      # 「取不到几何」与「几何不符」要分开
         rep.warn(part, '', 'C', '读成品 STEP 失败，几何校验跳过：%s' % exc)
         return {'verified': 0, 'unverified': 0, 'exempt': 0}
-    dias = {d for a, d, _, _ in cyl if a in ('Z', 'X', 'Y')}
+    dias = probe_dias(ad, shape)
+    cyl_dias = sorted({d for a, d, _, _ in cyl if a in ('Z', 'X', 'Y')})
     out = {'verified': 0, 'unverified': 0, 'exempt': 0}
     for o in plan['ops']:
         finals = [i for i in o['size']['items'] if i['role'] == 'final']
@@ -225,8 +242,10 @@ def check_geometry(part, plan, rep, geo, tol):
                 out['verified'] += 1
             else:
                 rep.err(part, o['no'], 'C',
-                        '目标直径 φ%s 在成品实测直径（%s）里 %.2fmm 内找不到'
-                        % (it['value'], sorted(dias), tol))
+                        '目标直径 φ%s 在成品实测直径（圆柱面 %s，圆边端部 %s）里 %.2fmm 内找不到'
+                        % (it['value'], cyl_dias,
+                           sorted(d for d in dias if not any(
+                               abs(d - c) <= 1e-9 for c in cyl_dias)), tol))
     return out
 
 
