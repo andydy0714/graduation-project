@@ -563,12 +563,13 @@ def build_huosaiGan():
     z_g1, z_c1 = z, z + L_G_L
     z_hex, z_c2 = z_c1 + L_CONE, z_c1 + L_CONE + L_HEX
     z_50, z_tap = z_c2 + L_CONE2, z_c2 + L_CONE2 + L50
-    z_g2, z_end = z_tap + L_TAP, z_tap + L_TAP + L_G_R + L_TH_R
+    z_taper = z_tap + L_TAP                        # 1:20 锥面终点，φ50 -> φ47
+    z_g2, z_end = z_taper + L_G_R, z_taper + L_G_R + L_TH_R
 
     profile = [
         (0.0, 0.0), (R_TH - C, 0.0), (R_TH, C), (R_TH, z_g1),
         (R_G, z_g1), (R_G, z_c1), (R_HEX, z_hex), (R_HEX, z_c2),
-        (R50, z_50), (R50, z_tap), (R_TAP, z_tap), (R_G, z_tap),
+        (R50, z_50), (R50, z_tap), (R_TAP, z_taper), (R_G, z_taper),
         (R_G, z_g2), (R_TH, z_g2), (R_TH, z_end - C_R), (R_TH - C_R, z_end),
         (0.0, z_end), (0.0, 0.0),
     ]

@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-10-05 15:38:01",
+  "checked_at": "2026-10-05 16:17:15",
   "parts": [
     {
       "part": "定位销轴_DingWeiXiaoZhou",
@@ -45,7 +45,7 @@
       "removed_solids": 1,
       "bbox_inside": true,
       "volume_conserved": true,
-      "seconds": 0.0078,
+      "seconds": 0.0067,
       "ok": true
     },
     {
@@ -92,7 +92,7 @@
       "removed_solids": 1,
       "bbox_inside": true,
       "volume_conserved": true,
-      "seconds": 0.0112,
+      "seconds": 0.009,
       "ok": true
     },
     {
@@ -139,7 +139,7 @@
       "removed_solids": 1,
       "bbox_inside": true,
       "volume_conserved": true,
-      "seconds": 0.0043,
+      "seconds": 0.0035,
       "ok": true
     },
     {
@@ -166,8 +166,8 @@
       "finished": {
         "valid": true,
         "solids": 1,
-        "faces": 32,
-        "volume": 1908225.9522063504,
+        "faces": 33,
+        "volume": 1957152.330795199,
         "bbox": [
           -25.0,
           -25.0,
@@ -182,11 +182,11 @@
           1090.0
         ]
       },
-      "removed": 1908225.952206,
+      "removed": 1957152.330795,
       "removed_solids": 1,
       "bbox_inside": true,
       "volume_conserved": true,
-      "seconds": 0.0085,
+      "seconds": 0.0091,
       "ok": true
     },
     {
@@ -280,7 +280,7 @@
       "removed_solids": 1,
       "bbox_inside": true,
       "volume_conserved": true,
-      "seconds": 0.01,
+      "seconds": 0.0105,
       "ok": true
     },
     {
@@ -327,7 +327,7 @@
       "removed_solids": 1,
       "bbox_inside": true,
       "volume_conserved": true,
-      "seconds": 0.0268,
+      "seconds": 0.0255,
       "ok": true
     },
     {
@@ -374,7 +374,7 @@
       "removed_solids": 1,
       "bbox_inside": true,
       "volume_conserved": true,
-      "seconds": 0.0054,
+      "seconds": 0.0053,
       "ok": true
     },
     {
@@ -421,7 +421,7 @@
       "removed_solids": 1,
       "bbox_inside": true,
       "volume_conserved": true,
-      "seconds": 0.012,
+      "seconds": 0.013,
       "ok": true
     },
     {
@@ -468,7 +468,7 @@
       "removed_solids": 1,
       "bbox_inside": true,
       "volume_conserved": true,
-      "seconds": 0.005,
+      "seconds": 0.0051,
       "ok": true
     }
   ],
