@@ -1,0 +1,288 @@
+{
+  "schema_version": "1.0",
+  "part": "定位销轴_DingWeiXiaoZhou",
+  "plan_sha1": "9e8d3279e78f852d98063e8b2700a90081cef4f3",
+  "ops": [
+    {
+      "no": "1",
+      "name": "下料",
+      "text": "棒料 φ35mm×35mm",
+      "kind": "neutral",
+      "method": "下料",
+      "target": "",
+      "size": { "items": [], "note": "" },
+      "datum": "",
+      "fixture": "",
+      "source": "text",
+      "bodies": [],
+      "not_modeled": ["R5"],
+      "pending": ""
+    },
+    {
+      "no": "2",
+      "name": "粗车",
+      "text": "夹毛坯的一端外圆，粗车外圆尺寸至 φ24mm，长度为 8(+1/0)mm，端面见平即可。继续车外圆尺寸至 φ33mm，长度为 9mm，粗糙度为 Ra12.5μm",
+      "kind": "removal",
+      "method": "粗车",
+      "target": "一端外圆、端面",
+      "size": {
+        "items": [
+          {
+            "what": "dia",
+            "value": 24.0,
+            "role": "intermediate",
+            "source": "text",
+            "note": "粗车外圆尺寸；成品该段为 φ20"
+          },
+          {
+            "what": "len",
+            "value": 8.0,
+            "tol": [0.0, 1.0],
+            "role": "intermediate",
+            "source": "text",
+            "note": "φ24 段长"
+          },
+          {
+            "what": "dia",
+            "value": 33.0,
+            "role": "intermediate",
+            "source": "text",
+            "note": "粗车外圆尺寸；工序 4 车至 φ30"
+          },
+          {
+            "what": "len",
+            "value": 9.0,
+            "role": "intermediate",
+            "source": "text",
+            "note": "φ33 段长；粗糙度 Ra12.5μm 不影响几何"
+          }
+        ],
+        "note": "「端面见平即可」句中未给数 → 只要求车光、不给尺寸（§三第 3 级）"
+      },
+      "datum": "",
+      "fixture": "夹毛坯的一端外圆",
+      "source": "text",
+      "bodies": [],
+      "not_modeled": [],
+      "pending": ""
+    },
+    {
+      "no": "3",
+      "name": "粗车",
+      "text": "倒头夹已加工外圆 φ24mm，车另一端各部，外圆为 φ21mm，保证总长为 32mm",
+      "kind": "removal",
+      "method": "粗车",
+      "target": "另一端各部、总长",
+      "size": {
+        "items": [
+          {
+            "what": "dia",
+            "value": 21.0,
+            "role": "intermediate",
+            "source": "text",
+            "note": "粗车外圆尺寸；工序 4 再精车到 φ20"
+          },
+          {
+            "what": "len",
+            "value": 32.0,
+            "role": "intermediate",
+            "source": "text",
+            "note": "总长 32；工序 5 保证总长 30（R10）"
+          }
+        ],
+        "note": ""
+      },
+      "datum": "",
+      "fixture": "倒头夹已加工外圆 φ24mm",
+      "source": "text",
+      "bodies": [],
+      "not_modeled": [],
+      "pending": ""
+    },
+    {
+      "no": "4",
+      "name": "精车",
+      "text": "以 φ21mm 外圆定位夹紧车外圆 φ24mm 尺寸至 φ20(+0.4/+0.3)mm，长度为 10mm，车退刀槽 φ18mm×2mm。车端面，保外圆 φ20(+0.4/+0.3)mm 总长为 10(-0.3/-0.4)mm。将尺寸 φ33mm 车至图样尺寸 φ30mm，钻中心孔 A2",
+      "kind": "removal",
+      "method": "精车",
+      "target": "φ20 定位轴颈、退刀槽、端面、φ30 台肩",
+      "size": {
+        "items": [
+          {
+            "what": "dia",
+            "value": 20.0,
+            "tol": [0.3, 0.4],
+            "role": "intermediate",
+            "source": "text",
+            "note": "车至 φ20(+0.4/+0.3)mm 属留磨量的中间尺寸，工序 7 磨到 φ20(+0.018/0)"
+          },
+          {
+            "what": "len",
+            "value": 10.0,
+            "tol": [-0.4, -0.3],
+            "role": "final",
+            "source": "text",
+            "note": "φ20 段长；图样给 10(-0.3/-0.4)"
+          },
+          { "what": "width", "value": 2.0, "role": "final", "source": "text", "note": "退刀槽宽" },
+          { "what": "dia", "value": 18.0, "role": "final", "source": "text", "note": "退刀槽底径" },
+          {
+            "what": "dia",
+            "value": 30.0,
+            "role": "final",
+            "source": "text",
+            "note": "「将尺寸 φ33mm 车至图样尺寸 φ30mm」"
+          }
+        ],
+        "note": ""
+      },
+      "datum": "φ21 外圆",
+      "fixture": "以 φ21mm 外圆定位夹紧",
+      "source": "text",
+      "bodies": [],
+      "not_modeled": ["R3"],
+      "pending": ""
+    },
+    {
+      "no": "5",
+      "name": "精车",
+      "text": "以 φ20(+0.4/+0.3)mm 外圆定位夹紧（垫上铜皮），车另一端外圆至 φ18(+0.4/+0.3)mm。车 φ30mm 外圆处长度尺寸为 5(+0.8/+0.6)mm，保证定位销轴总长为 30mm。车小头 φ15mm 处锥度。切退刀槽 φ16mm×2mm。钻中心孔 A2",
+      "kind": "removal",
+      "method": "精车",
+      "target": "另一端外圆、φ30 段长度、小头锥面、退刀槽",
+      "size": {
+        "items": [
+          {
+            "what": "dia",
+            "value": 18.0,
+            "tol": [0.3, 0.4],
+            "role": "intermediate",
+            "source": "text",
+            "note": "车至 φ18(+0.4/+0.3)mm 属留磨量的中间尺寸，工序 7 磨到 φ18(+0.018/0)"
+          },
+          {
+            "what": "len",
+            "value": 5.0,
+            "tol": [0.6, 0.8],
+            "role": "final",
+            "source": "text",
+            "note": "φ30 外圆处长度尺寸 5(+0.8/+0.6)"
+          },
+          { "what": "len", "value": 30.0, "role": "final", "source": "text", "note": "定位销轴总长终值" },
+          {
+            "what": "dia",
+            "value": 15.0,
+            "role": "final",
+            "source": "text",
+            "note": "小头平头直径（文本「车小头 φ15mm 处锥度」给了 φ15）"
+          },
+          {
+            "what": "len",
+            "value": 3.5,
+            "role": "final",
+            "source": "geometry",
+            "must_call_tool": true,
+            "note": "小头锥面轴向长度：文本只给「锥度」没给轴向尺寸 → 从成品量取（§三第 4 级）"
+          },
+          {
+            "what": "len",
+            "value": 1.5,
+            "role": "final",
+            "source": "geometry",
+            "must_call_tool": true,
+            "note": "φ15 平头长：文本未给 → 从成品量取"
+          },
+          { "what": "width", "value": 2.0, "role": "final", "source": "text", "note": "退刀槽宽" },
+          { "what": "dia", "value": 16.0, "role": "final", "source": "text", "note": "退刀槽底径" }
+        ],
+        "note": ""
+      },
+      "datum": "φ20 外圆",
+      "fixture": "以 φ20(+0.4/+0.3)mm 外圆定位夹紧（垫上铜皮）",
+      "source": "geometry",
+      "bodies": [],
+      "not_modeled": ["R3"],
+      "pending": ""
+    },
+    {
+      "no": "6",
+      "name": "热处理",
+      "text": "热处理 55~60HRC",
+      "kind": "neutral",
+      "method": "热处理",
+      "target": "",
+      "size": { "items": [], "note": "" },
+      "datum": "",
+      "fixture": "",
+      "source": "text",
+      "bodies": [],
+      "not_modeled": [],
+      "pending": ""
+    },
+    {
+      "no": "7",
+      "name": "磨",
+      "text": "研修两端中心孔，并以两中心孔定位装夹工件，磨削两轴径 φ20(+0.018/0)mm 和 φ18(+0.018/0)mm 至图样尺寸，并磨削两端面，保证垂直度",
+      "kind": "removal",
+      "method": "磨",
+      "target": "两轴径、两端面",
+      "size": {
+        "items": [
+          {
+            "what": "dia",
+            "value": 20.0,
+            "tol": [0.0, 0.018],
+            "role": "final",
+            "source": "text",
+            "note": "φ20 图样尺寸"
+          },
+          {
+            "what": "dia",
+            "value": 18.0,
+            "tol": [0.0, 0.018],
+            "role": "final",
+            "source": "text",
+            "note": "φ18 图样尺寸"
+          }
+        ],
+        "note": "「研修两端中心孔」按 R3 不建；「磨削两端面，保证垂直度」句中未给数 → 不给尺寸"
+      },
+      "datum": "两端中心孔",
+      "fixture": "两中心孔定位装夹工件",
+      "source": "text",
+      "bodies": [],
+      "not_modeled": ["R3"],
+      "pending": ""
+    },
+    {
+      "no": "8",
+      "name": "检验",
+      "text": "按图样要求检验各部",
+      "kind": "neutral",
+      "method": "检验",
+      "target": "",
+      "size": { "items": [], "note": "" },
+      "datum": "",
+      "fixture": "",
+      "source": "text",
+      "bodies": [],
+      "not_modeled": [],
+      "pending": ""
+    },
+    {
+      "no": "9",
+      "name": "入库",
+      "text": "涂油入库",
+      "kind": "neutral",
+      "method": "入库",
+      "target": "",
+      "size": { "items": [], "note": "" },
+      "datum": "",
+      "fixture": "",
+      "source": "text",
+      "bodies": [],
+      "not_modeled": [],
+      "pending": ""
+    }
+  ]
+}
